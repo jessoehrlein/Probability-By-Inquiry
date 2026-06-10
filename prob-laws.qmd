@@ -1,0 +1,173 @@
+# Laws of Probability
+
+## Introduction
+
+Now that we know something about how sets work, we'll define probability and the axioms it follows. Most of this chapter will be working with those axioms and a few laws that result from them.
+
+## Definitions, Exercises, and Theorems
+
+::: {#nte-setup .callout-note}
+## Outcomes, Sample Space, and Events
+
+Consider a procedure (called a **random experiment**) that has a well-defined set of possible results. We call each possible result of that experiment an **outcome**, and the set of all outcomes is the **sample space**, usually denoted $S.$ An **event** is a subset of the sample space.
+:::
+
+::: {#exr-ss}
+What is the sample space if I roll a standard six-sided die? Describe in words an event $A$ within this sample space that we might consider. How would you write that event as a subset of the sample space?
+:::
+
+::: {#tip-axioms .callout-tip}
+## Axioms of Probability
+
+Let $S$ be a sample space. **Probability** is a function defined on events in that sample space, with the probability of event $A$ denoted as $P(A)$. This function satisfies the following axioms:
+
+1.  For any event $A$, $P(A) \ge 0$.
+
+2.  $P(S) = 1$.
+
+3.  For mutually disjoint events $A_1, A_2, A_3, \cdots$, we have $$P\left(\bigcup_{i=0}^\infty A_i\right) = \sum_{i=1}^\infty P(A_i).$$
+:::
+
+::: {#thm-axioms}
+Using the probability axioms, prove the following:
+
+- For any event $A$, $P(A^C) = 1 - P(A)$.
+
+- If $A \subseteq B$, then $P(A) \leq P(B)$.
+:::
+
+::: {#exr-tournament}
+Math, CS, Business, and English compete in a tournament, and exactly one of them will win. Business and CS have the same chance of winning the tournament. Math is three times as likely to win the tournament as English. The probability that either Math or Business wins the tournament is 0.7. Find the probabilities of each team winning the tournament.
+:::
+
+::: {#thm-equal}
+Prove that in a finite sample space $S$ with all outcomes equally likely, the probability of an event $A$ is $P(A) = \dfrac{|A|}{|S|}$.
+:::
+
+::: {#exr-rollpairs}
+You roll a fair six-sided die twice. Let $X_1$ be the outcome of the first roll and $X_2$ the outcome of the second roll. Describe the sample space $S$ as a set of ordered pairs $(X_1, X_2)$. What outcomes are in the event $A$ defined as the event that $X_1 + X_2 = 6$? What is the probability of $A$?
+:::
+
+::: {#exr-pcp}
+The probability that a visit to a primary care physician's (PCP) office results in neither lab work nor referral to a specialist is 40%. Of those coming to a PCP's office, 45% are referred to specialists and 30% require lab work. Calculate the probability that a visit to a PCP's office results in both lab work and referral to a specialist. CITE SAMPLE P
+:::
+
+Sample spaces can be countable, as in the examples above. We call these **discrete probability models**. In other cases, the sample space can be uncountable. We call these **continuous probability models**.
+
+::: {#exr-jobtime}
+Let $T$ be the time in hours to complete a certain job at a factory. Based on historical data, we know that $$P(T \leq t) = \begin{cases} \frac{1}{16} t^2 & \mathrm{for~} 0 \leq t \leq 4; \\ 1 & \mathrm{for~} t>4. \end{cases}$$ Find the probability that the job needs \textbf{at most} 2 hours.
+:::
+
+::: {#nte-conditional .callout-note}
+## Conditional Probability
+
+For two events $A$ and $B$, the **conditional probability** of $A$ given $B$, written $P(A|B)$, is the probability that event $A$ occurs if we know that event $B$ occurred. That is, $P(A|B) = \dfrac{P(A \cap B)}{P(B)}$.
+:::
+
+::: {#exr-cond}
+If I roll a fair six-sided die, what is the probability that I roll a 6? Now suppose that after I roll the die, I tell you that I rolled an even number. What is the updated probability that I rolled a 6?
+
+(Note: In the language of conditional probability, this is the probability that I rolled a 6 given that I rolled an even number, or $P(6\vert ~ \mathrm{even})$.)
+:::
+
+::: {#exr-twoflips}
+Suppose I flip two fair coins and don't show you the results. - What is the probability that both flips were tails?
+
+- Suppose that I tell you that the first flip was a tail. Given that information, what is the probability that both flips were tails?
+
+- Suppose that you ask me whether I got at least one tail, and I say yes. Given that information, what is the probability that both flips were tails?
+:::
+
+::: {#nte-independent .callout-note}
+## Independence
+
+We call two events $A$ and $B$ **independent** if $P(A \cap B) = P(A) P(B)$.
+:::
+
+::: {#exr-52ind}
+Suppose I draw the top card from a shuffled, standard 52-card deck. Let $A$ be the event that the card is a three and $B$ be the event that the card is a club. Show that $A$ and $B$ are independent.
+:::
+
+::: {#exr-cardind}
+Suppose I make a special card deck from a standard deck. I include only red 2, 3, and 4 cards and black 5 and 6 cards, and then I shuffle the deck and draw the top card. Let $E$ be the event that the card is even and $F$ be the event that it is red. Show that $E$ and $F$ are not independent.
+:::
+
+::: {#exr-washingmachine}
+A washing machine is made up of many components. For simplicity, suppose that the ones that commonly break come in three categories: the motion system, timing control, and the water system. If any of those subsystems fails, the washing machine fails. Suppose the subsystems operate and fail independently of each other and that the probability of the motion system failing within ten years is 0.05, the probability of the control system failing within ten years is 0.015, and the probability of the water system failing within ten years is 0.07. What is the probability that the washing machine still works after ten years?^[CITE Doganaksoy et al Product reliability (Significance 2023)]
+:::
+
+::: {#thm-indcond}
+Prove that if $A$ and $B$ are independent, then $P(A|B) = P(A)$.
+:::
+
+::: {#exr-sumind}
+Suppose you toss a pair of fair six-sided dice. Let $A$ be the event that the sum of the rolls is a multiple of 2. Let $B$ be the event that the sum of the rolls is a multiple of 3. Are $A$ and $B$ independent events? Why or why not?
+:::
+
+::: {#thm-total}
+## Law of Total Probability
+
+Prove that if $B_1, B_2, B_3, \cdots$ are a partition of the sample space $S$, then for an event $A$, $P(A) = \sum_i P(A|B_i) P(B_i)$.
+:::
+
+::: {#exr-Elise}
+Elise is playing a board game that involves rolling a fair six-sided die and spinning a spinner. If the die roll is a multiple of 3, the player spins a spinner with 4 equally-sized regions numbered 1 through 4. Otherwise, the player spins a spinner with 8 equally-sized regions numbered 1 through 8. The spinner result determines how far the player moves on the board. What is the probability that Elise will only move 1 spot on her turn?
+:::
+
+::: {#thm-Bayes}
+## Bayes' Rule
+
+Prove that $P(B|A) = \dfrac{P(A|B)P(B)}{P(A)}$.
+:::
+
+Let's use Bayes' Rule a bit. The Law of Total Probability will also be helpful!
+
+::: {#exr-boardgames}
+About 50.5% of respondents to a survey about games were 45 years old or older. Of people ages 18-44, about 37.5% said they play board games at least monthly. Of people ages 45+, about 20.2% said they play board games at least monthly.[^prob-laws-1]
+
+A person who plays board games at least once a month is randomly chosen from the survey respondents. What is the probability that they are 45+ years old?
+:::
+
+[^prob-laws-1]: CITE YOUGOV SURVEY
+
+::: {#exr-charity}
+A survey was conducted of those who say they contributed to charity during the past year. The survey results indicate that 80% of this population claims to have contributed at least \$500, 40% overstated the value of their contributions, and 38% did both. Calculate the probability that a randomly selected person overstated the value of their contribution, given that they claimed to have contributed less than \$500.[^prob-laws-2]
+:::
+
+[^prob-laws-2]: Adapted from SAMPLE P CITE PROBLEM
+
+::: {#exr-bankruptcy}
+Small businesses in a particular city are categorized as retail, service, or other. In a study of yearly bankruptcies of small businesses in the city, this information was observed:
+
+- 55% of the small businesses were retail, and of those, 10% went bankrupt.
+
+- 30% of the small businesses were service, and of those, 12% went bankrupt.
+
+- The rest of the businesses were other, and 5% of those went bankrupt.
+
+An auditor randomly selected a small business that went bankrupt last year. Calculate the probability that it was a service business.[^prob-laws-3]
+:::
+
+[^prob-laws-3]: Adapted from SAMPLE P CITE THIS PROBLEM
+
+::: {#thm-compindep}
+Prove that if $A$ and $B$ are independent, then $A^C$ and $B$ are independent.
+:::
+
+::: {#exr-bayes}
+The Massachusetts Bay Transit Authority (MBTA) tracks and publishes data about the reliability of three lines (Blue, Orange, and Red) of Boston's subway system, the T. The MBTA tracks the percent of riders of that line who reached their destination within five minutes of the expected time. (We'll call those trips "on time.")
+
+In one 12-month period, 16% of trips included in the data were on the Blue Line, 38% were on the Orange Line, and 46% were on the Red Line. Unfortunately, 9% of trips did not arrive on time. Of those, 14% were on the Blue Line, 21% were on the Orange Line, and the remaining 65% were on the Red Line.[^prob-laws-4]
+
+Marie-Caroline and Jocelyn each took separate trips included in the dataset. If Marie-Caroline's trip was on the Red Line, what is the probability that it did not arrive on time? If Jocelyn's trip was on time, what is the probability that it was on the Orange Line?
+:::
+
+[^prob-laws-4]: CITE MBTA DATA 6/5/26 AND ADAPTED FROM BAYES RULES
+
+## Further Practice
+
+To come!
+
+## Challenge Questions
+
+To come!

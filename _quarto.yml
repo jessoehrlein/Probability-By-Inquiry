@@ -9,6 +9,7 @@ book:
     - index.qmd
     - intro.qmd
     - set-theory.qmd
+    - prob-laws.qmd
     - summary.qmd
     - references.qmd
 
@@ -25,4 +26,6 @@ editor: visual
 language:
   crossref-nte-prefix: "Definition"
   crossref-nte-title: "Definition"
+  crossref-tip-prefix: "Axioms"
+  crossref-tip-title: "Axioms"
 
