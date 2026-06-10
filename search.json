@@ -4,20 +4,149 @@
     "href": "index.html",
     "title": "Probability By Inquiry",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books. Hello.\n\n1 + 1\n\n[1] 2"
+    "text": "Welcome to PbI\nThis is the website for Probability By Inquiry by Jessie Oehrlein.\nSource files for this book can be found on GitHub at github.com/jessoehrlein/Probability-By-Inquiry.",
+    "crumbs": [
+      "Welcome to PbI"
+    ]
   },
   {
     "objectID": "intro.html",
     "href": "intro.html",
-    "title": "1  Introduction",
+    "title": "What Is This Book?",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\n\n1 + 1\n\n[1] 2"
+    "text": "What Is Probability Theory?\nThis book is intended for a calculus-based undergraduate probability theory course that uses inquiry-based learning.\nProbability theory is the area of mathematics that defines and proves ideas about probability.\nIf you think it’s cheating to use “probability” in that definition… well, yes, it kind of is. So what is probability, anyway? Depending on the context and your philosophy, you might think of probability in a variety of ways. Here are two common interpretations:\nOur mathematical tools will allow us to say some things about probability that are true regardless of these interpretations. Instead, we’ll start from thinking of probability as a function that follows certain rules, and then we’ll figure out what happens from there.\nThat doesn’t mean that real world scenarios and interpretations will have no effect on the math we do! The particular “shapes” of probability we’ll look at are shaped by their applicability to common scenarios. None of this math sprang out of nowhere. Most of it was developed because people had uses for it.",
+    "crumbs": [
+      "What Is This Book?"
+    ]
+  },
+  {
+    "objectID": "intro.html#what-is-probability-theory",
+    "href": "intro.html#what-is-probability-theory",
+    "title": "What Is This Book?",
+    "section": "",
+    "text": "How often an outcome will occur if we measure a process over many repetitions or a long period of time;\nHow likely we believe a certain outcome is.",
+    "crumbs": [
+      "What Is This Book?"
+    ]
+  },
+  {
+    "objectID": "intro.html#what-is-inquiry-based-learning",
+    "href": "intro.html#what-is-inquiry-based-learning",
+    "title": "What Is This Book?",
+    "section": "What Is Inquiry-Based Learning?",
+    "text": "What Is Inquiry-Based Learning?\nInquiry-Based Learning in mathematics is a teaching & learning approach in which you, the student, do most of the mathematical sense making in collaboration with your peers and instructor. The instructor serves as a guide through this mathematical landscape, and their goal is for you to discover or explore certain ideas, but student thinking is the central focus of the course. CITATION HERE.\nFor this book, that means that you, along with your peers, are going to build up the key ideas and results of probability theory. Each chapter is structured as a sequence of definitions, exercises, and theorems. There are very occasional examples, and there are not solutions. You will:\n\nCarefully read the definitions. These often also introduce new notation. When you encounter a new definition, it’s a good idea to write down an example for yourself. In some cases, a non-example might also be useful! Write down any questions you have about the definition, too.\nSolve the exercises. These apply the definitions that have been introduced. As you go through the book, they’ll also build more and more on the previous ideas you’ve figured out!\nProve the theorems. Theorems are statements about something that is true in general. You will write proofs that build on definitions, axioms, and prior results to explain why these statements must be true. Think of the audience of these proofs as slightly skeptical math students at a similar level. What level of detail would help them to be convinced?\n\nAt the end of each chapter, you’ll find sections titled Further Practice and Challenge Questions. Further Practice sections include exercises that are meant to help you be more comfortable with the definitions and tools of the chapter. Like the name indicates, they’re more practice at a similar level. Challenge Questions sections include exercises or proofs that push the ideas a bit further.",
+    "crumbs": [
+      "What Is This Book?"
+    ]
+  },
+  {
+    "objectID": "intro.html#what-should-i-already-know",
+    "href": "intro.html#what-should-i-already-know",
+    "title": "What Is This Book?",
+    "section": "What Should I Already Know?",
+    "text": "What Should I Already Know?\nThis book assumes that you are familiar with single-variable calculus and are comfortable with functions, derivatives, integrals.\nIt does not assume that you have previously seen set theory, counting, or statistics or that you have previous experience writing proofs, though those will make various sections of the book a bit easier!\nSome multivariate calculus is helpful in CHAPTER NAME HERE, but APPENDIX NAME HERE has a crash course with everything you need to know.",
+    "crumbs": [
+      "What Is This Book?"
+    ]
+  },
+  {
+    "objectID": "set-theory.html",
+    "href": "set-theory.html",
+    "title": "1  Set Theory",
+    "section": "",
+    "text": "1.1 Introduction\nIn INTRODUCTION, I said that we’d define probability as a function that follows some rules. But functions need some kind of input and output, so we need to start there. We’ll say that a function maps from a set \\(X\\) to a set \\(Y\\). This chapter is all about what we mean by a set and how these sets behave.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Set Theory</span>"
+    ]
+  },
+  {
+    "objectID": "set-theory.html#definitions-exercises-and-theorems",
+    "href": "set-theory.html#definitions-exercises-and-theorems",
+    "title": "1  Set Theory",
+    "section": "1.2 Definitions, Exercises, and Theorems",
+    "text": "1.2 Definitions, Exercises, and Theorems\n\n\n\n\n\n\nDefinition 1.1: Set\n\n\n\nA set \\(A\\) is an unordered list of elements. We commonly describe \\(A\\)’s elements in two ways.\n\nRoster notation lists the elements: \\(\\{a_1, a_2, \\cdots a_n\\}\\)\nSet-builder notation uses a condition that exactly describes the elements of \\(A\\). For example, the set of positive integers less than 20 could be written as \\(A = \\{a |~ a \\in \\mathbb{Z}^+, a &lt; 20\\}.\\)\n\n\n\n\n\n\n\n\n\nDefinition 1.2: Element and Subset\n\n\n\nIf \\(t\\) is an element of set \\(A\\), then we say that \\(t\\) is an element of \\(A\\), that \\(t\\) is in \\(A\\), or \\(t \\in A\\). If every element of a set \\(B\\) is also in \\(A\\), then we say that \\(B\\) is a subset of \\(A\\), or \\(B \\subseteq A\\).\n\n\nFor example, \\(\\{2,4\\}\\) is a subset of \\(\\{1,2,3,4,5\\}\\), but \\(\\{4,6\\}\\) is not. The empty set \\(\\emptyset\\) (the set of no elements) is considered a subset of all sets. A set is also considered a subset of itself.\n\nExercise 1.1 Let \\(A = \\{n \\mid n = 4k+1, k \\in \\mathbb{Z}\\}\\) and let \\(B = \\{2, 5, 8, 11, 14, 17, 20\\}\\). Choose and write a non-empty subset of \\(A\\) in roster notation, and choose and write a non-empty subset of \\(B\\) in set-builder notation.\n\n\n\n\n\n\n\nDefinition 1.3: Set Equality\n\n\n\nWe say that two sets \\(A\\) and \\(B\\) are equal, or \\(A = B\\), if they have exactly the same elements. This is equivalent to both \\(A \\subseteq B\\) and \\(B \\subseteq A\\) being true.\n\n\n\nExercise 1.2 Use the definition of set equality to show that \\(A = C\\) where \\(A = \\{n \\mid n = 4k+1, k \\in \\mathbb{Z}\\}\\) and \\(B = \\{m \\mid m = 4l - 3, l \\in \\mathbb{Z}\\}\\). (There are other ways to show this, but this exercise is about practicing using the definition!)\n\n\n\n\n\n\n\nDefinition 1.4: Union and Intersection\n\n\n\nGiven sets \\(A\\) and \\(B\\), their union \\(A \\cup B\\) is the set of all elements that are in at least one of \\(A\\) or \\(B\\). Given \\(n\\) sets \\(A_1, A_2, \\cdots, A_n\\), their union \\(\\bigcup_{i=1}^n A_i = A_1 \\cup A_2 \\cup \\cdots \\cup A_n\\) is the set of all elements that are in at least one of the original \\(n\\) sets.\nThe intersection of \\(A\\) and \\(B\\), denoted \\(A \\cap B\\), is the set of all elements that are in both \\(A\\) and \\(B\\). The intersection of \\(n\\) sets \\(\\bigcap_{i=1}^n A_i = A_1 \\cap A_2 \\cap \\cdots \\cap A_n\\) is the set of all elements that are in every one of the original \\(n\\) sets.\n\n\nFor example, \\(\\{1,2,3,4,5\\} \\cup \\{4,6\\} = \\{1,2,3,4,5,6\\}\\), and \\(\\{1,2,3,4,5\\} \\cap \\{4,6\\} = \\{4\\}\\).\n\nExercise 1.3 Find the intersection of \\(A\\) and \\(B\\) from Exercise 1.1. Find the union of the subsets of \\(A\\) and \\(B\\) that you described in Exercise 1.1.\n\n\nExercise 1.4 Define three sets \\(A_1\\), \\(A_2\\), and \\(A_3\\) of your choosing, and find their union \\(\\bigcup_{i=1}^3 A_i\\) and their intersection \\(\\bigcap_{i=1}^3 A_i\\).\n\n\nExercise 1.5 Show that \\(A \\cap (B \\cup C) \\subseteq (A \\cap B) \\cup (A \\cap C)\\).\n\n\nTheorem 1.1 (Distributive Law) Prove the following visually, and then prove them using the definition of set equality (Definition 1.3). (You’re already halfway there on the first statement with Exercise 1.5!)\nFor any sets \\(A, B,\\) and \\(C\\), we have that\n\n\\(A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)\\);\n\\(A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)\\).\n\n\n\n\n\n\n\n\nDefinition 1.5\n\n\n\nWe call a set \\(S\\) the universal set if it is the set of all elements that we are considering to be possible in a particular context.\nGiven a set \\(A \\subseteq S\\), the complement of \\(A\\), denoted \\(A^C\\) or \\(\\bar{A}\\), is the set of all elements of \\(S\\) not in \\(A\\).\nGiven two sets \\(A\\) and \\(B\\), the difference \\(A-B\\) is the set of all elements of \\(A\\) that are not in \\(B\\).\n\n\n\nExercise 1.6 Let \\(S = \\{0, 2, 4, 6, 8, 10\\}\\), \\(A = \\{0, 4, 8\\}\\), and \\(B = \\{0, 2, 8, 10\\}\\). Find \\(A^C\\), \\(B^C\\), \\(A-B\\), and \\(B-A\\).\n\n\nTheorem 1.2 (DeMorgan’s Laws) Prove the following for the case \\(n=2\\) or \\(n=3\\). (If you’ve seen induction, try proving it for a general natural number \\(n\\) using Definition 1.3!) For any sets \\(A_1, A_2, \\cdots, A_n\\), we have that\n\n\\(\\left(A_1 \\cup A_2 \\cup \\cdots \\cup A_n\\right)^C = A_1^C \\cap A_2^C \\cap \\cdots \\cap A_n^C\\);\n\\(\\left(A_1 \\cap A_2 \\cap \\cdots \\cap A_n\\right)^C = A_1^C \\cup A_2^C \\cup \\cdots \\cup A_n^C\\).\n\n\n\n\n\n\n\n\nDefinition 1.6: Disjoint and Partition\n\n\n\nSets \\(A\\) and \\(B\\) are disjoint if they have no elements in common, that is, if \\(A \\cap B = \\emptyset\\).\nA partition of a set \\(S\\) is a collection of sets \\(A_1, A_2, \\cdots, A_n \\subseteq S\\) such that \\(A_1, A_2, \\cdots A_n\\) are all pairwise disjoint (no two of the sets share an element) and \\(A_1 \\cup A_2 \\cup \\cdots \\cup A_n = S\\).\n\n\n\nExercise 1.7 Let \\(S = \\{1,2,3\\}\\). Write all possible partitions of \\(S\\), and explain how you know that these are all the possibilities.\n\n\nExercise 1.8 Let \\(S\\) be the set of all cards in a standard 52-card deck. Let \\(A\\) be the set containing the clubs and the red face cards. Describe a set \\(B\\) such that \\(A\\) and \\(B\\) are disjoint. Do \\(A\\) and your set \\(B\\) form a partition of \\(S\\)? Explain.\n\n\n\n\n\n\n\nDefinition 1.7: Bijection\n\n\n\nA bijection between sets \\(A\\) and \\(B\\) is a function \\(f: A \\rightarrow B\\) such that for each element \\(b \\in B\\), there is exactly one element \\(a \\in A\\) such that \\(f(a) = b\\).\n\n\n\nExercise 1.9 Describe or illustrate a bijective function \\(f: A \\rightarrow B\\) where \\(A = \\{\\textrm{red, blue, yellow}\\}\\) and \\(B = \\{\\textrm{shirt, skirt, headband}\\}\\).\n\n\n\n\n\n\n\nDefinition 1.8: Cardinality\n\n\n\nThe cardinality of a set \\(A\\), denoted \\(|A|\\), is a measure of the size of the set. If \\(A\\) is the empty set, then \\(|A| = 0\\). If there is a bijection between \\(A\\) and the set \\(\\{1, 2, \\cdots, n\\}\\) for some positive integer \\(n\\), then \\(|A| = n\\). (This means that for finite sets, the cardinality is the number of elements in the set.) In general, two sets have the same cardinality if there is a bijection between them.\n\n\n\nExercise 1.10 Suppose that \\(A_1\\), \\(A_2\\), and \\(A_3\\) form a partition of a universal set \\(S\\). Let \\(B\\) be some other set. If we know that \\(|B \\cap A_1| = n\\), \\(|B \\cap A_2| = m\\), and \\(|B \\cap A_3| = k\\), what is \\(|B|\\) and why?\n\n\n\n\n\n\n\nDefinition 1.9: Countable and Uncountable\n\n\n\nA set \\(A\\) is called countable if it is either finite or in one-to-one correspondence with the natural numbers \\(\\mathbb{N}\\). (In other words, a set \\(A\\) is countably infinite if we can find some bijection between it and \\(\\mathbb{N}\\), matching each element of \\(A\\) to exactly one element of \\(\\mathbb{N}\\).)\nA set is called uncountable if it is not countable. For example, the real numbers \\(\\mathbb{R}\\) are uncountable, as are all intervals such as \\((0,1)\\).\n\n\n\nExercise 1.11 Find a bijection between the interval \\((0,1)\\) and the interval \\((3,5)\\).\n\n\nExercise 1.12 Using that \\((0,1)\\) is uncountable, prove that any open interval \\((a,b)\\) with \\(a&lt;b\\) and \\(a, b \\in \\mathbb{R}\\) is uncountable. (Hint: generalize your work from Exercise 1.11.)\n\n\nTheorem 1.3 Let \\(A\\) and \\(B\\) be finite sets. Prove that \\(|A \\cup B| = |A| + |B| - |A \\cap B|\\).\n\n\nExercise 1.13 How would you generalize the previous theorem to give the cardinality of the union of three finite sets \\(|A \\cup B \\cup C|\\) instead of just two? What about \\(n\\) finite sets?\n\n\nExercise 1.14 Suppose that a survey of Summer Olympics viewers in the US showed the following:\n\n50% watched gymnastics;\n80% watched track;\n10% watched diving;\n9% watched diving and gymnastics;\n7% watched diving and track;\n40% watched gymnastics and track;\n6% watched all three.\n\nFind the percentage of the group that watched none of these three sports.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Set Theory</span>"
+    ]
+  },
+  {
+    "objectID": "set-theory.html#further-practice",
+    "href": "set-theory.html#further-practice",
+    "title": "1  Set Theory",
+    "section": "1.3 Further Practice",
+    "text": "1.3 Further Practice\nTo come!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Set Theory</span>"
+    ]
+  },
+  {
+    "objectID": "set-theory.html#challenge-questions",
+    "href": "set-theory.html#challenge-questions",
+    "title": "1  Set Theory",
+    "section": "1.4 Challenge Questions",
+    "text": "1.4 Challenge Questions\nTo come!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Set Theory</span>"
+    ]
+  },
+  {
+    "objectID": "prob-laws.html",
+    "href": "prob-laws.html",
+    "title": "2  Laws of Probability",
+    "section": "",
+    "text": "2.1 Introduction\nNow that we know something about how sets work, we’ll define probability and the axioms it follows. Most of this chapter will be working with those axioms and a few laws that result from them.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Laws of Probability</span>"
+    ]
+  },
+  {
+    "objectID": "prob-laws.html#definitions-exercises-and-theorems",
+    "href": "prob-laws.html#definitions-exercises-and-theorems",
+    "title": "2  Laws of Probability",
+    "section": "2.2 Definitions, Exercises, and Theorems",
+    "text": "2.2 Definitions, Exercises, and Theorems\n\n\n\n\n\n\nDefinition 2.1: Outcomes, Sample Space, and Events\n\n\n\nConsider a procedure (called a random experiment) that has a well-defined set of possible results. We call each possible result of that experiment an outcome, and the set of all outcomes is the sample space, usually denoted \\(S.\\) An event is a subset of the sample space.\n\n\n\nExercise 2.1 What is the sample space if I roll a standard six-sided die? Describe in words an event \\(A\\) within this sample space that we might consider. How would you write that event as a subset of the sample space?\n\n\n\n\n\n\n\nAxioms 2.1: Axioms of Probability\n\n\n\nLet \\(S\\) be a sample space. Probability is a function defined on events in that sample space, with the probability of event \\(A\\) denoted as \\(P(A)\\). This function satisfies the following axioms:\n\nFor any event \\(A\\), \\(P(A) \\ge 0\\).\n\\(P(S) = 1\\).\nFor mutually disjoint events \\(A_1, A_2, A_3, \\cdots\\), we have \\[P\\left(\\bigcup_{i=0}^\\infty A_i\\right) = \\sum_{i=1}^\\infty P(A_i).\\]\n\n\n\n\nTheorem 2.1 Using the probability axioms, prove the following:\n\nFor any event \\(A\\), \\(P(A^C) = 1 - P(A)\\).\nIf \\(A \\subseteq B\\), then \\(P(A) \\leq P(B)\\).\n\n\n\nExercise 2.2 Math, CS, Business, and English compete in a tournament, and exactly one of them will win. Business and CS have the same chance of winning the tournament. Math is three times as likely to win the tournament as English. The probability that either Math or Business wins the tournament is 0.7. Find the probabilities of each team winning the tournament.\n\n\nTheorem 2.2 Prove that in a finite sample space \\(S\\) with all outcomes equally likely, the probability of an event \\(A\\) is \\(P(A) = \\dfrac{|A|}{|S|}\\).\n\n\nExercise 2.3 You roll a fair six-sided die twice. Let \\(X_1\\) be the outcome of the first roll and \\(X_2\\) the outcome of the second roll. Describe the sample space \\(S\\) as a set of ordered pairs \\((X_1, X_2)\\). What outcomes are in the event \\(A\\) defined as the event that \\(X_1 + X_2 = 6\\)? What is the probability of \\(A\\)?\n\n\nExercise 2.4 The probability that a visit to a primary care physician’s (PCP) office results in neither lab work nor referral to a specialist is 40%. Of those coming to a PCP’s office, 45% are referred to specialists and 30% require lab work. Calculate the probability that a visit to a PCP’s office results in both lab work and referral to a specialist. CITE SAMPLE P\n\nSample spaces can be countable, as in the examples above. We call these discrete probability models. In other cases, the sample space can be uncountable. We call these continuous probability models.\n\nExercise 2.5 Let \\(T\\) be the time in hours to complete a certain job at a factory. Based on historical data, we know that \\[P(T \\leq t) = \\begin{cases} \\frac{1}{16} t^2 & \\mathrm{for~} 0 \\leq t \\leq 4; \\\\ 1 & \\mathrm{for~} t&gt;4. \\end{cases}\\] Find the probability that the job needs 2 hours.\n\n\n\n\n\n\n\nDefinition 2.2: Conditional Probability\n\n\n\nFor two events \\(A\\) and \\(B\\), the conditional probability of \\(A\\) given \\(B\\), written \\(P(A|B)\\), is the probability that event \\(A\\) occurs if we know that event \\(B\\) occurred. That is, \\(P(A|B) = \\dfrac{P(A \\cap B)}{P(B)}\\).\n\n\n\nExercise 2.6 If I roll a fair six-sided die, what is the probability that I roll a 6? Now suppose that after I roll the die, I tell you that I rolled an even number. What is the updated probability that I rolled a 6?\n(Note: In the language of conditional probability, this is the probability that I rolled a 6 given that I rolled an even number, or \\(P(6\\vert ~ \\mathrm{even})\\).)\n\n\nExercise 2.7 Suppose I flip two fair coins and don’t show you the results. - What is the probability that both flips were tails?\n\nSuppose that I tell you that the first flip was a tail. Given that information, what is the probability that both flips were tails?\nSuppose that you ask me whether I got at least one tail, and I say yes. Given that information, what is the probability that both flips were tails?\n\n\n\n\n\n\n\n\nDefinition 2.3: Independence\n\n\n\nWe call two events \\(A\\) and \\(B\\) independent if \\(P(A \\cap B) = P(A) P(B)\\).\n\n\n\nExercise 2.8 Suppose I draw the top card from a shuffled, standard 52-card deck. Let \\(A\\) be the event that the card is a three and \\(B\\) be the event that the card is a club. Show that \\(A\\) and \\(B\\) are independent.\n\n\nExercise 2.9 Suppose I make a special card deck from a standard deck. I include only red 2, 3, and 4 cards and black 5 and 6 cards, and then I shuffle the deck and draw the top card. Let \\(E\\) be the event that the card is even and \\(F\\) be the event that it is red. Show that \\(E\\) and \\(F\\) are not independent.\n\n\nExercise 2.10 A washing machine is made up of many components. For simplicity, suppose that the ones that commonly break come in three categories: the motion system, timing control, and the water system. If any of those subsystems fails, the washing machine fails. Suppose the subsystems operate and fail independently of each other and that the probability of the motion system failing within ten years is 0.05, the probability of the control system failing within ten years is 0.015, and the probability of the water system failing within ten years is 0.07. What is the probability that the washing machine still works after ten years?1\n\n\nTheorem 2.3 Prove that if \\(A\\) and \\(B\\) are independent, then \\(P(A|B) = P(A)\\).\n\n\nExercise 2.11 Suppose you toss a pair of fair six-sided dice. Let \\(A\\) be the event that the sum of the rolls is a multiple of 2. Let \\(B\\) be the event that the sum of the rolls is a multiple of 3. Are \\(A\\) and \\(B\\) independent events? Why or why not?\n\n\nTheorem 2.4 (Law of Total Probability) Prove that if \\(B_1, B_2, B_3, \\cdots\\) are a partition of the sample space \\(S\\), then for an event \\(A\\), \\(P(A) = \\sum_i P(A|B_i) P(B_i)\\).\n\n\nExercise 2.12 Elise is playing a board game that involves rolling a fair six-sided die and spinning a spinner. If the die roll is a multiple of 3, the player spins a spinner with 4 equally-sized regions numbered 1 through 4. Otherwise, the player spins a spinner with 8 equally-sized regions numbered 1 through 8. The spinner result determines how far the player moves on the board. What is the probability that Elise will only move 1 spot on her turn?\n\n\nTheorem 2.5 (Bayes’ Rule) Prove that \\(P(B|A) = \\dfrac{P(A|B)P(B)}{P(A)}\\).\n\nLet’s use Bayes’ Rule a bit. The Law of Total Probability will also be helpful!\n\nExercise 2.13 About 50.5% of respondents to a survey about games were 45 years old or older. Of people ages 18-44, about 37.5% said they play board games at least monthly. Of people ages 45+, about 20.2% said they play board games at least monthly.2\nA person who plays board games at least once a month is randomly chosen from the survey respondents. What is the probability that they are 45+ years old?\n\n\nExercise 2.14 A survey was conducted of those who say they contributed to charity during the past year. The survey results indicate that 80% of this population claims to have contributed at least $500, 40% overstated the value of their contributions, and 38% did both. Calculate the probability that a randomly selected person overstated the value of their contribution, given that they claimed to have contributed less than $500.3\n\n\nExercise 2.15 Small businesses in a particular city are categorized as retail, service, or other. In a study of yearly bankruptcies of small businesses in the city, this information was observed:\n\n55% of the small businesses were retail, and of those, 10% went bankrupt.\n30% of the small businesses were service, and of those, 12% went bankrupt.\nThe rest of the businesses were other, and 5% of those went bankrupt.\n\nAn auditor randomly selected a small business that went bankrupt last year. Calculate the probability that it was a service business.4\n\n\nTheorem 2.6 Prove that if \\(A\\) and \\(B\\) are independent, then \\(A^C\\) and \\(B\\) are independent.\n\n\nExercise 2.16 The Massachusetts Bay Transit Authority (MBTA) tracks and publishes data about the reliability of three lines (Blue, Orange, and Red) of Boston’s subway system, the T. The MBTA tracks the percent of riders of that line who reached their destination within five minutes of the expected time. (We’ll call those trips “on time.”)\nIn one 12-month period, 16% of trips included in the data were on the Blue Line, 38% were on the Orange Line, and 46% were on the Red Line. Unfortunately, 9% of trips did not arrive on time. Of those, 14% were on the Blue Line, 21% were on the Orange Line, and the remaining 65% were on the Red Line.5\nMarie-Caroline and Jocelyn each took separate trips included in the dataset. If Marie-Caroline’s trip was on the Red Line, what is the probability that it did not arrive on time? If Jocelyn’s trip was on time, what is the probability that it was on the Orange Line?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Laws of Probability</span>"
+    ]
+  },
+  {
+    "objectID": "prob-laws.html#further-practice",
+    "href": "prob-laws.html#further-practice",
+    "title": "2  Laws of Probability",
+    "section": "2.3 Further Practice",
+    "text": "2.3 Further Practice\nTo come!",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Laws of Probability</span>"
+    ]
+  },
+  {
+    "objectID": "prob-laws.html#challenge-questions",
+    "href": "prob-laws.html#challenge-questions",
+    "title": "2  Laws of Probability",
+    "section": "2.4 Challenge Questions",
+    "text": "2.4 Challenge Questions\nTo come!",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Laws of Probability</span>"
+    ]
+  },
+  {
+    "objectID": "prob-laws.html#footnotes",
+    "href": "prob-laws.html#footnotes",
+    "title": "2  Laws of Probability",
+    "section": "",
+    "text": "CITE Doganaksoy et al Product reliability (Significance 2023)↩︎\nCITE YOUGOV SURVEY↩︎\nAdapted from SAMPLE P CITE PROBLEM↩︎\nAdapted from SAMPLE P CITE THIS PROBLEM↩︎\nCITE MBTA DATA 6/5/26 AND ADAPTED FROM BAYES RULES↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Laws of Probability</span>"
+    ]
   },
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "2  Summary",
+    "title": "3  Summary",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
+    ]
   }
 ]
