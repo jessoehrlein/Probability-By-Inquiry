@@ -1,9 +1,5 @@
-# Preface {.unnumbered}
+# Welcome to PbI {.unnumbered}
 
-This is a Quarto book.
+This is the website for *Probability By Inquiry* by Jessie Oehrlein.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>. Hello.
-
-```{r}
-1 + 1
-```
+Source files for this book can be found on GitHub at [github.com/jessoehrlein/Probability-By-Inquiry](github.com/jessoehrlein/Probability-By-Inquiry).

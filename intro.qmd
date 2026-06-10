@@ -1,7 +1,39 @@
-# Introduction
+# What Is This Book? {.unnumbered}
 
-This is a book created from markdown and executable code.
+This book is intended for a calculus-based undergraduate probability theory course that uses inquiry-based learning.
 
-```{r}
-1 + 1
-```
+## What Is Probability Theory?
+
+Probability theory is the area of mathematics that defines and proves ideas about probability.
+
+If you think it's cheating to use "probability" in that definition... well, yes, it kind of is. So what is probability, anyway? Depending on the context and your philosophy, you might think of probability in a variety of ways. Here are two common interpretations:
+
+- How often an outcome will occur if we measure a process over many repetitions or a long period of time;
+
+- How likely we believe a certain outcome is.
+
+Our mathematical tools will allow us to say some things about probability that are true regardless of these interpretations. Instead, we'll start from thinking of probability as a function that follows certain rules, and then we'll figure out what happens from there.
+
+That doesn't mean that real world scenarios and interpretations will have no effect on the math we do! The particular "shapes" of probability we'll look at are shaped by their applicability to common scenarios. None of this math sprang out of nowhere. Most of it was developed because people had uses for it.
+
+## What Is Inquiry-Based Learning?
+
+Inquiry-Based Learning in mathematics is a teaching & learning approach in which you, the student, do most of the mathematical sense making in collaboration with your peers and instructor. The instructor serves as a guide through this mathematical landscape, and their goal is for you to discover or explore certain ideas, but student thinking is the central focus of the course. CITATION HERE.
+
+For this book, that means that **you**, along with your peers, are going to build up the key ideas and results of probability theory. Each chapter is structured as a sequence of definitions, exercises, and theorems. There are very occasional examples, and there are not solutions. You will:
+
+- Carefully read the **definitions**. These often also introduce new notation. When you encounter a new definition, it's a good idea to write down an example for yourself. In some cases, a non-example might also be useful! Write down any questions you have about the definition, too.
+
+- Solve the **exercises**. These apply the definitions that have been introduced. As you go through the book, they'll also build more and more on the previous ideas you've figured out!
+
+- Prove the **theorems**. Theorems are statements about something that is true in general. You will write proofs that build on definitions, axioms, and prior results to explain why these statements must be true. Think of the audience of these proofs as slightly skeptical math students at a similar level. What level of detail would help them to be convinced?
+
+At the end of each chapter, you'll find sections titled Further Practice and Challenge Questions. Further Practice sections include exercises that are meant to help you be more comfortable with the definitions and tools of the chapter. Like the name indicates, they're more practice at a similar level. Challenge Questions sections include exercises or proofs that push the ideas a bit further.
+
+## What Should I Already Know?
+
+This book assumes that you are familiar with single-variable calculus and are comfortable with functions, derivatives, integrals.
+
+It does not assume that you have previously seen set theory, counting, or statistics or that you have previous experience writing proofs, though those will make various sections of the book a bit easier!
+
+Some multivariate calculus is helpful in CHAPTER NAME HERE, but APPENDIX NAME HERE has a crash course with everything you need to know.

@@ -8,6 +8,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - set-theory.qmd
     - summary.qmd
     - references.qmd
 
@@ -20,4 +21,8 @@ format:
     documentclass: scrreprt
 
 editor: visual
+
+language:
+  crossref-nte-prefix: "Definition"
+  crossref-nte-title: "Definition"
 
