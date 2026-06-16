@@ -10,6 +10,7 @@ book:
     - intro.qmd
     - set-theory.qmd
     - prob-laws.qmd
+    - counting.qmd
     - summary.qmd
     - references.qmd
 
