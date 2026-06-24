@@ -11,6 +11,7 @@ book:
     - set-theory.qmd
     - prob-laws.qmd
     - counting.qmd
+    - discrete-rvs.qmd
     - summary.qmd
     - references.qmd
 

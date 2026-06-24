@@ -1,0 +1,191 @@
+# Introduction to Discrete Random Variables
+
+## Introduction
+
+WORDS
+
+## Definitions, Exercises, and Theorems
+
+::: {#nte-rv .callout-note}
+## Random Variable
+
+A **random variable** $X$ is a function from the sample space to the real numbers. That is, $X: S \rightarrow \mathbb{R}$.
+:::
+
+Here are some examples of random variables: the sum of rolls of two dice, the number of heads in a sequence of 8 coin flips, the total winnings from playing a particular probability-based game, the number of hats given to the correct people when $n$ people are handed their hats back at random.
+
+::: {#exr-rvrange}
+Find the possible values (ranges of the functions) for each of these random variables:
+
+a.  The number of heads in three coin flips
+
+b.  The time until you next receive an email
+
+c.  The number of flips of a coin until either the first heads appears or $n$ flips occur
+
+d.  The number of flips of a coin until the first heads appears
+
+e.  The time until a cell phone is either plugged into a charger or dies
+
+f.  The number of numbers 7 or above when four numbers from 0-9 are selected randomly, with repeats allowed
+
+g.  The number of numbers 7 or above when four numbers from 0-9 are selected randomly, with repeats not allowed
+
+h.  The time until the next occurrence of rain in a particular city
+
+:::
+
+::: {#exr-3heads}
+Write the function definition for the random variable in @exr-rvrange (a). In other words, find the sample space and map each outcome to a real number based on this random variable.
+:::
+
+We'll separate random variables into multiple types, and we'll talk about two of those types: discrete and continuous.
+
+::: {#nte-discrete .callout-note}
+## Discrete Random Variable
+
+A **discrete random variable** is a random variable with a countable range. That is, it can only take on countably many values.
+:::
+
+We'll formally define a **continuous** random variable later, but for the moment, consider them to be random variables with uncountably infinite ranges.
+
+::: {#exr-discrete}
+Which random variables from @exr-rvrange are discrete?
+:::
+
+Okay, so we have discrete random variables. How do we start talking about probabilities associated with them?
+
+::: {#nte-pmf .callout-note}
+## Probability Mass Function
+
+Let $X$ be a discrete random variable with range $\{x_1, x_2, x_3, \cdots\}$ The **probability mass function** (or PMF) $P_X$ assigns a probability to each value in the range. That is, $P_X(x_k) = P(X = x_k)$ for every $x_k$ in $X$'s range.
+:::
+
+::: {#exr-3headpmf}
+Find the probability mass function for the random variable you defined in @exr-rvrange (a) and @exr-3heads.
+:::
+
+::: {#exr-roll6}
+I have a fair six-sided die which I roll until I roll a 6 for the first time. Let $X$ be the total number of die rolls. Find the probability mass function of $X$. 
+:::
+
+The PMF isn't the only useful way to talk about probabilities associated with a discrete random variable.
+
+::: {#nte-cdf .callout-note}
+## Cumulative Distribution Function
+
+The **cumulative distribution function** (or CDF) of a random variable $X$ is $F_X (x) = P(X \leq x)$ for all $x \in \mathbb{R}$.
+:::
+
+::: {#exr-cdfpractice}
+Find the cumulative distribution functions for the random variables you studied in @exr-3headpmf and @exr-roll6.
+
+(Hint: For the random variable from @exr-roll6 the expression for the sum of a geometric sequence might be helpful. Feel free to look this up! You could alternatively think about the complement of what you're looking for.)
+:::
+
+::: {#exr-pmfcdf}
+Find expressions in terms of $F_X$ and $P_X$ for $P(a < X \leq b)$ and $P(X < x)$ if $X$ is a discrete random variable.
+:::
+
+It's often useful to think about the "typical" or \textbf{expected} value of a random variable. Let's define that formally.
+
+::: {#nte-expectation .callout-note}
+## Expected Value
+
+The **expectation** or **expected value** of a random variable $X$ with probability mass function $P_X$ is $E[X] = \sum_k x_k P_X(x_k)$, that is, a weighted average of the values in the range of $X$.
+:::
+
+::: {#exr-endie}
+Find the expected value of a roll of a fair $n$-sided die.
+:::
+
+::: {#exr-cookies}
+A professor bakes cookies for finals week. The probability that she bakes 3 batches of cookies is 0.25, the probability that she bakes 4 batches of cookies is 0.3, the probability that she bakes 5 batches of cookies is 0.35, and the probability that she bakes 6 batches of cookies is 0.1. Find the expected value of the number of batches of cookies she bakes.
+:::
+
+::: {#exr-buses}
+A math camp of 120 students is driven in 3 buses to an amusement park. There are 36 students in one of the buses, 36 in the second bus, and 48 in the third bus. (Many students run late...) When the buses arrive, one of the 120 students is randomly chosen. Let $X$ denote the number of students on the bus of that randomly chosen student, and find $E[X]$. Is this less than, equal to, or greater than the average number of students per bus, and why?
+:::
+
+::: {#exr-classsize}
+The class size paradox states that students tend to have a larger average class size than a school's stated average class size. Explain this using your result from the last exercise.
+:::
+
+::: {#exr-chuckaluck}
+In the carnival game chuck-a-luck, three dice are rolled. You make a bet on a particular number (1, 2, 3, 4, 5, 6) showing up. The payout is 1 to 1 (that is, \$1 of net winnings for every \$1 you bet) if that number shows on (exactly) one die, 2 to 1 if it shows on two dice, and 3 to 1 if it shows up on all three. You lose your initial stake if your number does not show on any of the dice. If you make a \$1 bet on the number three, what is your expected net winnings?^[CITE DENNIS SUN]
+:::
+
+Some random variables are functions of other random variables. The next result is one of two results that tell us that expectation is \textbf{linear}, or in other words, expectation behaves nicely with linear combinations of random variables. (We'll need more tools to get to the second result.)
+
+::: {#thm-linear1}
+Prove that for any $a, b \in \mathbb{R}$, $E[aX+b] = aE[X] + b$.
+:::
+
+::: {#exr-xsq}
+Consider a random variable $X$ with $P_X(x_k) = \frac{1}{7}$ for $x_k \in \{-3, -2, -1, 0, 1, 2, 3\}$. Let another random variable $Y = X^2$. Find the range of $Y$ and the probability mass function $P_Y$. Using $P_Y$, find $E[Y]$.
+:::
+
+
+::: {#thm-lotus}
+## Law of the Unconscious Statistician (LOTUS)
+
+Let $X$ be a random variable, and let $Y=g(X)$ for some function $g$. Then we have $E[Y] = \sum_k g(x_k) P_X(x_k)$. While this holds in general, prove it for the case where the range of $X$ is finite.
+:::
+
+Now we'll think about measuring the spread or variation of the possible values of $X$. The measures we'll use are related to the distance between values of $X$ and its expectation.
+
+::: {#nte-varsd .callout-note}
+## Variance and Standard Deviation
+
+Let $X$ be a random variable with expectation $E[X]$. Then the **variance** of $X$, denoted $\mathrm{Var}(X)$, is given by $\mathrm{Var}(X) = E[(X-E[X])^2]$. The square root of variance is called **standard deviation**, or $\mathrm{SD}(X)$.
+:::
+
+::: {#exr-vardie}
+Find $\mathrm{Var}(X)$ if $X$ is the outcome when a fair six-sided die is rolled.
+:::
+
+The definition of variance isn't the easiest to actually do calculations with. Luckily, there's an easier way. Let's see it and prove that it works:
+
+::: {#thm-var}
+Prove that $\mathrm{Var}(X)$ can be written as $E[X^2] - (E[X])^2$.
+:::
+
+::: {#exr-vardie2}
+Recalculate the variance in @exr-vardie using the form of variance from @thm-var.
+:::
+
+::: {#thm-varnonlin}
+Prove that $\mathrm{Var}(aX+b) = a^2 \mathrm{Var}(X)$.
+:::
+
+::: {#exr-sdnonlin}
+In terms of $\mathrm{SD}(X)$, what is $\mathrm{SD}(aX+b)$ where $a,b$ are real numbers with $a \ne 0$?
+:::
+
+::: {#exr-marblescasino}
+A box contains five red and five blue marbles. Two marbles are withdrawn randomly. If they are the same color, you win \$1.10, and if they are different colors, you lose \$1.00. Find the expected value of the amount you win and the variance of the amount you win. (Please do not use this to start a casino on the quad.)^[CITE PROBABILITYCOURSE.COM, say something about Cooper.]
+:::
+
+::: {exr-varsq}
+Find $\mathrm{Var}(X)$ and $\mathrm{Var}(Y)$ from @exr-xsq.
+:::
+
+::: {exr-pi}
+Let $X$ be a discrete random variable with range $\{0, \frac{\pi}{4}, \frac{\pi}{2}, \frac{3\pi}{4}, \pi\}$ such that $P_X(x_i) = \frac{1}{5}$ for all $x_i$ in the range. Find $E[\cos(X)]$ and $\mathrm{Var}(\cos(X))$.^[cite probabilitycourse.com here]
+:::
+
+::: {exr-carmain}
+Suppose the annual cost of maintaining and repairing a car in Fitchburg has an expected value of \$500 and a variance of 280 square dollars^[The main problem with variance is the units.]. A tax of 25\% is introduced on all items associated with the maintenance and repair of cars, so everything is now 25\% more expensive. Now what are the expected value and variance of annual car maintenance and repair?^[modified from sample p, I think]
+:::
+
+## Further Practice
+
+## Challenge Questions
+
+::: {#exr-logcdf}
+Let $X$ be a random variable, and let $Y = e^X$. (In function form, this means that $Y(x) = e^{X(x)}.$) Find the cumulative distribution function $F_Y$ in terms of $F_X$. (In other words, if $F_Y (y) = F_X (x)$, how are $y$ and $x$ related?)
+:::
+
+::: {#exr-diegame}
+Consider the following game. You roll a fair die once and observe the result $X$. At this point, you can stop the game and win $X$ dollars. You can also choose to roll the die for the second time to observe the value $Y$. In this case, you will win $Y$ dollars. Let $W$ be the value that you win in this game. What strategy do you use to maximize $E[W]$? What is the maximum $E[W]$ you can achieve using your strategy? What is $\mathrm{Var}(W)$ using your strategy?^[modified from probabilitycourse.com again]
+:::

@@ -49,6 +49,8 @@ On Thursday, only four of the students are going to give presentations, but they
 :::
 
 ::: {#nte-permutation .callout-note}
+##Permutation
+
 A **permutation** of $n$ objects is a way of ordering $n$ objects. A $k$-permutation from a set of size $n$ is a way of ordering $k$ objects chosen from a set of $n$ objects. $P(n,k)$ denotes the number of $k$-permutations from a set of size $n$.
 :::
 
@@ -87,6 +89,8 @@ Explain why the number of ways to pick a subset of size $k$ from a set of size $
 :::
 
 ::: {#nte-combination .callout-note}
+##Combination
+
 The **combination** $C(n,k)$ or $\binom{n}{k}$, usually read "$n$ choose $k$," is the number of ways to pick $k$ unordered things from a set of size $n$.
 :::
 
@@ -103,6 +107,8 @@ I flip an unfair coin with $P(H) = p$ four times. Find the probability that I fl
 :::
 
 ::: {#nte-binomial .callout-note}
+##Bernoulli Trials and Binomial Experiments
+
 A **Bernoulli trial** is a random experiment with two possible outcomes: success with probability $p$ or failure with probability $1-p$. A **binomial experiment** is a series of $n$ independent Bernoulli trials in which we count the number of successes.
 :::
 
