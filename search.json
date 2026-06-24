@@ -140,13 +140,113 @@
     ]
   },
   {
+    "objectID": "counting.html",
+    "href": "counting.html",
+    "title": "3  Counting",
+    "section": "",
+    "text": "3.1 Introduction\nIn Theorem 2.2, you showed that for a finite sample space with equally likely outcomes, our probability can be found by looking at the number of outcomes in the event of interest. So we need a good way to count those outcomes. Counting might sound easy, but sometimes there’s a lot of subtlety in what we’re trying to count.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Counting</span>"
+    ]
+  },
+  {
+    "objectID": "counting.html#definitions-exercises-and-theorems",
+    "href": "counting.html#definitions-exercises-and-theorems",
+    "title": "3  Counting",
+    "section": "3.2 Definitions, Exercises, and Theorems",
+    "text": "3.2 Definitions, Exercises, and Theorems\n\nExercise 3.1 As part of a game, I spin a spinner that is split equally among 3 colors (red, blue, and yellow), and I roll a fair four-sided die. How many combinations of spins and rolls could I get?\n\n\nExercise 3.2 In the scenario in Exercise 3.1, suppose the result I want is a red spin and a roll of either 3 or 4. What is the probability that I get my desired result?\n\n\nExercise 3.3 Show that the number of four-digit PINs using digits 0 through 9 if digits can be reused is 10,000.\n\n\nExercise 3.4 How many four-digit PINs are there that do not use 2? What is the probability of choosing such a PIN from the set of all possible four-digit PINs?\n\n\nExercise 3.5 Suppose I have a set of \\(n\\) characters and need a password of length \\(k\\). I am allowed to reuse characters. Find and explain an expression for the number of possible passwords.\n\n\nExercise 3.6 Suppose a license plate format consists of 3 numbers (with repeats allowed) followed by 3 letters (again with repeats allowed). How many license plates are possible?\n\n\nExercise 3.7 Now suppose that repeats are not allowed in the license plates described above. Each digit and each letter can be used at most once. How many license plates are possible?\n\n\nExercise 3.8 All eight students in a class are going to give individual presentations during finals period. In how many possible orders could they present?\n\n\n\n\n\n\n\nDefinition 3.1: Factorial\n\n\n\nThe factorial is a useful shorthand: \\(n\\)-factorial, or \\(n!\\), is defined as \\(n! = n \\cdot (n-1) \\cdot \\cdots 2 \\cdot 1.\\)\n\n\n\nExercise 3.9 On Thursday, only four of the students are going to give presentations, but they don’t know in advance which four. How many possible ordered sets of four student presenters are there?\n\n\n\n\n\n\n\nDefinition 3.2\n\n\n\n##Permutation\nA permutation of \\(n\\) objects is a way of ordering \\(n\\) objects. A \\(k\\)-permutation from a set of size \\(n\\) is a way of ordering \\(k\\) objects chosen from a set of \\(n\\) objects. \\(P(n,k)\\) denotes the number of \\(k\\)-permutations from a set of size \\(n\\).\n\n\n\nTheorem 3.1 Explain why the number of \\(k\\)-permutations from a set of size \\(n\\) is \\(P(n,k) = \\dfrac{n!}{(n-k)!}\\).\n\n\nExercise 3.10 The “bootstrap” is a statistical method for generating a new data set that is like an existing one. Suppose we have a data set consisting of 6 observations: \\(x_1,x_2,x_3,x_4,x_5,x_6.\\) To generate a bootstrap data set, we sample from the original data set with replacement, meaning that it is possible for each observation to be sampled more than once. An example bootstrap data set would be \\(x_2, x_3, x_4, x_2, x_1, x_3\\). What is the probability that the bootstrap data set contains each observation exactly once?\n\n\nExercise 3.11 As I work in the evenings, I often listen to music. Suppose that I have a playlist of \\(n=50\\) songs and I listen to them on shuffle where the software always selects from the list with equal probability when selecting which song to play next. If I listen to \\(k=10\\) songs, what is the probability that at least one of the songs will be duplicated? What about if I listen to \\(k=30\\) songs? (Hint: think about the complement of the desired probability!)\n\n\nExercise 3.12 There are \\(p\\) people in the room. Assume that each person’s birthday is equally likely to be any of 365 days (ignore leap years!) and that everyone’s birthdays are independent. What is the probability that no one in the room has the same birthday? What is the least value of \\(p\\) for which there is at least a 50% chance that two people do share a birthday?\n\n\nExercise 3.13 Let \\(S = \\{1,2,3,4,5\\}\\). Answer each of the following:\n\nHow many ordered pairs with elements from \\(S\\) are there?\nHow many ordered triples with elements from \\(S\\) are there?\nHow many different two-element subsets of \\(S\\) are there? (Recall that order does not matter in sets.)\nHow many different three-element subsets of \\(S\\) are there?\nHow are the answers to (a) and (c) related? What about (b) and (d)?\n\n\n\nTheorem 3.2 Explain why the number of ways to pick a subset of size \\(k\\) from a set of size \\(n\\) is \\(\\dfrac{n!}{k! (n-k)!}\\).\n\n\n\n\n\n\n\nDefinition 3.3\n\n\n\n##Combination\nThe combination \\(C(n,k)\\) or \\(\\binom{n}{k}\\), usually read “\\(n\\) choose \\(k\\),” is the number of ways to pick \\(k\\) unordered things from a set of size \\(n\\).\n\n\n\nExercise 3.14 As part of a card game, I am dealt three cards from a standard 52-card deck. How many possible hands could I have? What is the probability that my hand does not contain an ace? (There are four aces in the deck.)\n\n\nExercise 3.15 How many distinct sequences could I make using two copies of the letter \\(H\\) and two copies of the letter \\(T\\)?\n\n\nExercise 3.16 I flip an unfair coin with \\(P(H) = p\\) four times. Find the probability that I flip exactly two tails. (Hint: What is the probability of the outcome \\(TTHH\\)? What about \\(HTHT\\)?)\n\n\n\n\n\n\n\nDefinition 3.4\n\n\n\n##Bernoulli Trials and Binomial Experiments\nA Bernoulli trial is a random experiment with two possible outcomes: success with probability \\(p\\) or failure with probability \\(1-p\\). A binomial experiment is a series of \\(n\\) independent Bernoulli trials in which we count the number of successes.\n\n\n\nTheorem 3.3 Explain why the probability of \\(k\\) successes in a binomial experiment is \\[P(k) = \\binom{n}{k} p^k (1-p)^{n-k}.\\]\n\n\nExercise 3.17 A woman, Joy, claimed that she could smell Parkinson’s disease. Researchers gave her 12 shirts and asked her to identify which ones had been worn by someone with Parkinson’s. Initially, researchers believe that she correctly identified 11 of the shirts. If she had been randomly guessing, what is the probability that she would have identified at least 11 of the shirts correctly? Based on this, do you believe her claim or not? (When you’re done with the problem, I’ll tell you what happened next!)\n\n\nExercise 3.18 A particular tennis player has a first serve percentage (which means his attempt at serving the ball lands in a valid place) across his career of 65%. In one set, 17 of his 18 first serves were valid. What is the probability of this player serving at least this well across 18 first serves?\n\n\nExercise 3.19 A club needs to choose two co-presidents. The names of all the current members are put into a hat, and the first two that are drawn will be co-presidents. The names are not replaced once they are drawn (one person cannot be two presidents). You want to know the probability that the presidents both have the same major. Is this binomial, and why/why not?",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Counting</span>"
+    ]
+  },
+  {
+    "objectID": "counting.html#further-practice",
+    "href": "counting.html#further-practice",
+    "title": "3  Counting",
+    "section": "3.3 Further Practice",
+    "text": "3.3 Further Practice\nTo come!",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Counting</span>"
+    ]
+  },
+  {
+    "objectID": "counting.html#challenge-questions",
+    "href": "counting.html#challenge-questions",
+    "title": "3  Counting",
+    "section": "3.4 Challenge Questions",
+    "text": "3.4 Challenge Questions\n\nExercise 3.20 The game SET involves a deck of 81 cards. Each card has a picture of some number (one, two, or three) of shapes (oval, squiggle, or diamond), which is painted in one color (green, red, or purple), with some shading (solid, hatched, or empty). Each number-shape-color-shading combination appears in the deck exactly once. Three cards are called a set if for each attribute, either all three cards match or all three are different. (For example, for color, either all three cards need to be the same color, or they each need to be a different color.) How many different sets are in the deck? What is the probability of there being a set in the first 4 cards dealt from a well-shuffled deck?\n\n\nExercise 3.21 A mail carrier delivers mail to nineteen houses on the east side of Blossom Street. The carrier notes that no two adjacent houses ever get mail on the same day, but that there are never more than two houses in a row that get no mail on the same day. How many different patterns of mail delivery are possible?1",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Counting</span>"
+    ]
+  },
+  {
+    "objectID": "counting.html#footnotes",
+    "href": "counting.html#footnotes",
+    "title": "3  Counting",
+    "section": "",
+    "text": "From AIME 2011 CITE↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Counting</span>"
+    ]
+  },
+  {
+    "objectID": "discrete-rvs.html",
+    "href": "discrete-rvs.html",
+    "title": "4  Introduction to Discrete Random Variables",
+    "section": "",
+    "text": "4.1 Introduction\nWORDS",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Discrete Random Variables</span>"
+    ]
+  },
+  {
+    "objectID": "discrete-rvs.html#definitions-exercises-and-theorems",
+    "href": "discrete-rvs.html#definitions-exercises-and-theorems",
+    "title": "4  Introduction to Discrete Random Variables",
+    "section": "4.2 Definitions, Exercises, and Theorems",
+    "text": "4.2 Definitions, Exercises, and Theorems\n\n\n\n\n\n\nDefinition 4.1: Random Variable\n\n\n\nA random variable \\(X\\) is a function from the sample space to the real numbers. That is, \\(X: S \\rightarrow \\mathbb{R}\\).\n\n\nHere are some examples of random variables: the sum of rolls of two dice, the number of heads in a sequence of 8 coin flips, the total winnings from playing a particular probability-based game, the number of hats given to the correct people when \\(n\\) people are handed their hats back at random.\n\nExercise 4.1 Find the possible values (ranges of the functions) for each of these random variables:\n\nThe number of heads in three coin flips\nThe time until you next receive an email\nThe number of flips of a coin until either the first heads appears or \\(n\\) flips occur\nThe number of flips of a coin until the first heads appears\nThe time until a cell phone is either plugged into a charger or dies\nThe number of numbers 7 or above when four numbers from 0-9 are selected randomly, with repeats allowed\nThe number of numbers 7 or above when four numbers from 0-9 are selected randomly, with repeats not allowed\nThe time until the next occurrence of rain in a particular city\n\n\n\nExercise 4.2 Write the function definition for the random variable in Exercise 4.1 (a). In other words, find the sample space and map each outcome to a real number based on this random variable.\n\nWe’ll separate random variables into multiple types, and we’ll talk about two of those types: discrete and continuous.\n\n\n\n\n\n\nDefinition 4.2: Discrete Random Variable\n\n\n\nA discrete random variable is a random variable with a countable range. That is, it can only take on countably many values.\n\n\nWe’ll formally define a continuous random variable later, but for the moment, consider them to be random variables with uncountably infinite ranges.\n\nExercise 4.3 Which random variables from Exercise 4.1 are discrete?\n\nOkay, so we have discrete random variables. How do we start talking about probabilities associated with them?\n\n\n\n\n\n\nDefinition 4.3: Probability Mass Function\n\n\n\nLet \\(X\\) be a discrete random variable with range \\(\\{x_1, x_2, x_3, \\cdots\\}\\) The probability mass function (or PMF) \\(P_X\\) assigns a probability to each value in the range. That is, \\(P_X(x_k) = P(X = x_k)\\) for every \\(x_k\\) in \\(X\\)’s range.\n\n\n\nExercise 4.4 Find the probability mass function for the random variable you defined in Exercise 4.1 (a) and Exercise 4.2.\n\n\nExercise 4.5 I have a fair six-sided die which I roll until I roll a 6 for the first time. Let \\(X\\) be the total number of die rolls. Find the probability mass function of \\(X\\).\n\nThe PMF isn’t the only useful way to talk about probabilities associated with a discrete random variable.\n\n\n\n\n\n\nDefinition 4.4: Cumulative Distribution Function\n\n\n\nThe cumulative distribution function (or CDF) of a random variable \\(X\\) is \\(F_X (x) = P(X \\leq x)\\) for all \\(x \\in \\mathbb{R}\\).\n\n\n\nExercise 4.6 Find the cumulative distribution functions for the random variables you studied in Exercise 4.4 and Exercise 4.5.\n(Hint: For the random variable from Exercise 4.5 the expression for the sum of a geometric sequence might be helpful. Feel free to look this up! You could alternatively think about the complement of what you’re looking for.)\n\n\nExercise 4.7 Find expressions in terms of \\(F_X\\) and \\(P_X\\) for \\(P(a &lt; X \\leq b)\\) and \\(P(X &lt; x)\\) if \\(X\\) is a discrete random variable.\n\nIt’s often useful to think about the “typical” or value of a random variable. Let’s define that formally.\n\n\n\n\n\n\nDefinition 4.5: Expected Value\n\n\n\nThe expectation or expected value of a random variable \\(X\\) with probability mass function \\(P_X\\) is \\(E[X] = \\sum_k x_k P_X(x_k)\\), that is, a weighted average of the values in the range of \\(X\\).\n\n\n\nExercise 4.8 Find the expected value of a roll of a fair \\(n\\)-sided die.\n\n\nExercise 4.9 A professor bakes cookies for finals week. The probability that she bakes 3 batches of cookies is 0.25, the probability that she bakes 4 batches of cookies is 0.3, the probability that she bakes 5 batches of cookies is 0.35, and the probability that she bakes 6 batches of cookies is 0.1. Find the expected value of the number of batches of cookies she bakes.\n\n\nExercise 4.10 A math camp of 120 students is driven in 3 buses to an amusement park. There are 36 students in one of the buses, 36 in the second bus, and 48 in the third bus. (Many students run late…) When the buses arrive, one of the 120 students is randomly chosen. Let \\(X\\) denote the number of students on the bus of that randomly chosen student, and find \\(E[X]\\). Is this less than, equal to, or greater than the average number of students per bus, and why?\n\n\nExercise 4.11 The class size paradox states that students tend to have a larger average class size than a school’s stated average class size. Explain this using your result from the last exercise.\n\n\nExercise 4.12 In the carnival game chuck-a-luck, three dice are rolled. You make a bet on a particular number (1, 2, 3, 4, 5, 6) showing up. The payout is 1 to 1 (that is, $1 of net winnings for every $1 you bet) if that number shows on (exactly) one die, 2 to 1 if it shows on two dice, and 3 to 1 if it shows up on all three. You lose your initial stake if your number does not show on any of the dice. If you make a $1 bet on the number three, what is your expected net winnings?1\n\nSome random variables are functions of other random variables. The next result is one of two results that tell us that expectation is , or in other words, expectation behaves nicely with linear combinations of random variables. (We’ll need more tools to get to the second result.)\n\nTheorem 4.1 Prove that for any \\(a, b \\in \\mathbb{R}\\), \\(E[aX+b] = aE[X] + b\\).\n\n\nExercise 4.13 Consider a random variable \\(X\\) with \\(P_X(x_k) = \\frac{1}{7}\\) for \\(x_k \\in \\{-3, -2, -1, 0, 1, 2, 3\\}\\). Let another random variable \\(Y = X^2\\). Find the range of \\(Y\\) and the probability mass function \\(P_Y\\). Using \\(P_Y\\), find \\(E[Y]\\).\n\n\nTheorem 4.2 (Law of the Unconscious Statistician (LOTUS)) Let \\(X\\) be a random variable, and let \\(Y=g(X)\\) for some function \\(g\\). Then we have \\(E[Y] = \\sum_k g(x_k) P_X(x_k)\\). While this holds in general, prove it for the case where the range of \\(X\\) is finite.\n\nNow we’ll think about measuring the spread or variation of the possible values of \\(X\\). The measures we’ll use are related to the distance between values of \\(X\\) and its expectation.\n\n\n\n\n\n\nDefinition 4.6: Variance and Standard Deviation\n\n\n\nLet \\(X\\) be a random variable with expectation \\(E[X]\\). Then the variance of \\(X\\), denoted \\(\\mathrm{Var}(X)\\), is given by \\(\\mathrm{Var}(X) = E[(X-E[X])^2]\\). The square root of variance is called standard deviation, or \\(\\mathrm{SD}(X)\\).\n\n\n\nExercise 4.14 Find \\(\\mathrm{Var}(X)\\) if \\(X\\) is the outcome when a fair six-sided die is rolled.\n\nThe definition of variance isn’t the easiest to actually do calculations with. Luckily, there’s an easier way. Let’s see it and prove that it works:\n\nTheorem 4.3 Prove that \\(\\mathrm{Var}(X)\\) can be written as \\(E[X^2] - (E[X])^2\\).\n\n\nExercise 4.15 Recalculate the variance in Exercise 4.14 using the form of variance from Theorem 4.3.\n\n\nTheorem 4.4 Prove that \\(\\mathrm{Var}(aX+b) = a^2 \\mathrm{Var}(X)\\).\n\n\nExercise 4.16 In terms of \\(\\mathrm{SD}(X)\\), what is \\(\\mathrm{SD}(aX+b)\\) where \\(a,b\\) are real numbers with \\(a \\ne 0\\)?\n\n\nExercise 4.17 A box contains five red and five blue marbles. Two marbles are withdrawn randomly. If they are the same color, you win $1.10, and if they are different colors, you lose $1.00. Find the expected value of the amount you win and the variance of the amount you win. (Please do not use this to start a casino on the quad.)2\n\n\nFind \\(\\mathrm{Var}(X)\\) and \\(\\mathrm{Var}(Y)\\) from Exercise 4.13.\n\n\nLet \\(X\\) be a discrete random variable with range \\(\\{0, \\frac{\\pi}{4}, \\frac{\\pi}{2}, \\frac{3\\pi}{4}, \\pi\\}\\) such that \\(P_X(x_i) = \\frac{1}{5}\\) for all \\(x_i\\) in the range. Find \\(E[\\cos(X)]\\) and \\(\\mathrm{Var}(\\cos(X))\\).3\n\n\nSuppose the annual cost of maintaining and repairing a car in Fitchburg has an expected value of $500 and a variance of 280 square dollars4. A tax of 25% is introduced on all items associated with the maintenance and repair of cars, so everything is now 25% more expensive. Now what are the expected value and variance of annual car maintenance and repair?5",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Discrete Random Variables</span>"
+    ]
+  },
+  {
+    "objectID": "discrete-rvs.html#further-practice",
+    "href": "discrete-rvs.html#further-practice",
+    "title": "4  Introduction to Discrete Random Variables",
+    "section": "4.3 Further Practice",
+    "text": "4.3 Further Practice",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Discrete Random Variables</span>"
+    ]
+  },
+  {
+    "objectID": "discrete-rvs.html#challenge-questions",
+    "href": "discrete-rvs.html#challenge-questions",
+    "title": "4  Introduction to Discrete Random Variables",
+    "section": "4.4 Challenge Questions",
+    "text": "4.4 Challenge Questions\n\nExercise 4.18 Let \\(X\\) be a random variable, and let \\(Y = e^X\\). (In function form, this means that \\(Y(x) = e^{X(x)}.\\)) Find the cumulative distribution function \\(F_Y\\) in terms of \\(F_X\\). (In other words, if \\(F_Y (y) = F_X (x)\\), how are \\(y\\) and \\(x\\) related?)\n\n\nExercise 4.19 Consider the following game. You roll a fair die once and observe the result \\(X\\). At this point, you can stop the game and win \\(X\\) dollars. You can also choose to roll the die for the second time to observe the value \\(Y\\). In this case, you will win \\(Y\\) dollars. Let \\(W\\) be the value that you win in this game. What strategy do you use to maximize \\(E[W]\\)? What is the maximum \\(E[W]\\) you can achieve using your strategy? What is \\(\\mathrm{Var}(W)\\) using your strategy?6",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Discrete Random Variables</span>"
+    ]
+  },
+  {
+    "objectID": "discrete-rvs.html#footnotes",
+    "href": "discrete-rvs.html#footnotes",
+    "title": "4  Introduction to Discrete Random Variables",
+    "section": "",
+    "text": "CITE DENNIS SUN↩︎\nCITE PROBABILITYCOURSE.COM, say something about Cooper.↩︎\ncite probabilitycourse.com here↩︎\nThe main problem with variance is the units.↩︎\nmodified from sample p, I think↩︎\nmodified from probabilitycourse.com again↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to Discrete Random Variables</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "3  Summary",
+    "title": "5  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Summary</span>"
     ]
   }
 ]

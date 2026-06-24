@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Laws of Probability – Probability By Inquiry</title>
+<title>3&nbsp; Counting – Probability By Inquiry</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./counting.html" rel="next">
-<link href="./set-theory.html" rel="prev">
+<link href="./discrete-rvs.html" rel="next">
+<link href="./prob-laws.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -114,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prob-laws.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Laws of Probability</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./counting.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Counting</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -159,13 +159,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-laws.html" class="sidebar-item-text sidebar-link active">
+  <a href="./prob-laws.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Laws of Probability</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./counting.html" class="sidebar-item-text sidebar-link">
+  <a href="./counting.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Counting</span></span></a>
   </div>
 </li>
@@ -197,10 +197,10 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2.1</span> Introduction</a></li>
-  <li><a href="#definitions-exercises-and-theorems" id="toc-definitions-exercises-and-theorems" class="nav-link" data-scroll-target="#definitions-exercises-and-theorems"><span class="header-section-number">2.2</span> Definitions, Exercises, and Theorems</a></li>
-  <li><a href="#further-practice" id="toc-further-practice" class="nav-link" data-scroll-target="#further-practice"><span class="header-section-number">2.3</span> Further Practice</a></li>
-  <li><a href="#challenge-questions" id="toc-challenge-questions" class="nav-link" data-scroll-target="#challenge-questions"><span class="header-section-number">2.4</span> Challenge Questions</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">3.1</span> Introduction</a></li>
+  <li><a href="#definitions-exercises-and-theorems" id="toc-definitions-exercises-and-theorems" class="nav-link" data-scroll-target="#definitions-exercises-and-theorems"><span class="header-section-number">3.2</span> Definitions, Exercises, and Theorems</a></li>
+  <li><a href="#further-practice" id="toc-further-practice" class="nav-link" data-scroll-target="#further-practice"><span class="header-section-number">3.3</span> Further Practice</a></li>
+  <li><a href="#challenge-questions" id="toc-challenge-questions" class="nav-link" data-scroll-target="#challenge-questions"><span class="header-section-number">3.4</span> Challenge Questions</a></li>
   </ul>
 </nav>
     </div>
@@ -209,7 +209,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Laws of Probability</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Counting</span></h1>
 </div>
 
 
@@ -226,174 +226,160 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
-<p>Now that we know something about how sets work, we’ll define probability and the axioms it follows. Most of this chapter will be working with those axioms and a few laws that result from them.</p>
+<section id="introduction" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">3.1</span> Introduction</h2>
+<p>In <a href="prob-laws.html#thm-equal" class="quarto-xref">Theorem&nbsp;<span>2.2</span></a>, you showed that for a finite sample space with equally likely outcomes, our probability can be found by looking at the number of outcomes in the event of interest. So we need a good way to count those outcomes. Counting might sound easy, but sometimes there’s a lot of subtlety in what we’re trying to count.</p>
 </section>
-<section id="definitions-exercises-and-theorems" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="definitions-exercises-and-theorems"><span class="header-section-number">2.2</span> Definitions, Exercises, and Theorems</h2>
-<div id="nte-setup" class="callout callout-style-default callout-note callout-titled">
+<section id="definitions-exercises-and-theorems" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="definitions-exercises-and-theorems"><span class="header-section-number">3.2</span> Definitions, Exercises, and Theorems</h2>
+<div id="exr-spinroll" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.1</strong></span> As part of a game, I spin a spinner that is split equally among 3 colors (red, blue, and yellow), and I roll a fair four-sided die. How many combinations of spins and rolls could I get?</p>
+</div>
+<div id="exr-srprob" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.2</strong></span> In the scenario in <a href="#exr-spinroll" class="quarto-xref">Exercise&nbsp;<span>3.1</span></a>, suppose the result I want is a red spin and a roll of either 3 or 4. What is the probability that I get my desired result?</p>
+</div>
+<div id="exr-pins" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.3</strong></span> Show that the number of four-digit PINs using digits 0 through 9 if digits can be reused is 10,000.</p>
+</div>
+<div id="exr-pins2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.4</strong></span> How many four-digit PINs are there that do not use 2? What is the probability of choosing such a PIN from the set of all possible four-digit PINs?</p>
+</div>
+<div id="exr-password" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.5</strong></span> Suppose I have a set of <span class="math inline">\(n\)</span> characters and need a password of length <span class="math inline">\(k\)</span>. I am allowed to reuse characters. Find and explain an expression for the number of possible passwords.</p>
+</div>
+<div id="exr-license" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.6</strong></span> Suppose a license plate format consists of 3 numbers (with repeats allowed) followed by 3 letters (again with repeats allowed). How many license plates are possible?</p>
+</div>
+<div id="exr-licenserep" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.7</strong></span> Now suppose that repeats are <em>not</em> allowed in the license plates described above. Each digit and each letter can be used at most once. How many license plates are possible?</p>
+</div>
+<div id="exr-prez" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.8</strong></span> All eight students in a class are going to give individual presentations during finals period. In how many possible orders could they present?</p>
+</div>
+<div id="nte-factorial" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition&nbsp;2.1: Outcomes, Sample Space, and Events
+Definition&nbsp;3.1: Factorial
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Consider a procedure (called a <strong>random experiment</strong>) that has a well-defined set of possible results. We call each possible result of that experiment an <strong>outcome</strong>, and the set of all outcomes is the <strong>sample space</strong>, usually denoted <span class="math inline">\(S.\)</span> An <strong>event</strong> is a subset of the sample space.</p>
+<p>The <strong>factorial</strong> is a useful shorthand: <span class="math inline">\(n\)</span>-factorial, or <span class="math inline">\(n!\)</span>, is defined as <span class="math inline">\(n! = n \cdot (n-1) \cdot \cdots 2 \cdot 1.\)</span></p>
 </div>
 </div>
-<div id="exr-ss" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.1</strong></span> What is the sample space if I roll a standard six-sided die? Describe in words an event <span class="math inline">\(A\)</span> within this sample space that we might consider. How would you write that event as a subset of the sample space?</p>
+<div id="exr-prezperm" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.9</strong></span> On Thursday, only four of the students are going to give presentations, but they don’t know in advance which four. How many possible ordered sets of four student presenters are there?</p>
 </div>
-<div id="tip-axioms" class="callout callout-style-default callout-tip callout-titled">
+<div id="nte-permutation" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Axioms&nbsp;2.1: Axioms of Probability
+Definition&nbsp;3.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(S\)</span> be a sample space. <strong>Probability</strong> is a function defined on events in that sample space, with the probability of event <span class="math inline">\(A\)</span> denoted as <span class="math inline">\(P(A)\)</span>. This function satisfies the following axioms:</p>
-<ol type="1">
-<li><p>For any event <span class="math inline">\(A\)</span>, <span class="math inline">\(P(A) \ge 0\)</span>.</p></li>
-<li><p><span class="math inline">\(P(S) = 1\)</span>.</p></li>
-<li><p>For mutually disjoint events <span class="math inline">\(A_1, A_2, A_3, \cdots\)</span>, we have <span class="math display">\[P\left(\bigcup_{i=0}^\infty A_i\right) = \sum_{i=1}^\infty P(A_i).\]</span></p></li>
+<p>##Permutation</p>
+<p>A <strong>permutation</strong> of <span class="math inline">\(n\)</span> objects is a way of ordering <span class="math inline">\(n\)</span> objects. A <span class="math inline">\(k\)</span>-permutation from a set of size <span class="math inline">\(n\)</span> is a way of ordering <span class="math inline">\(k\)</span> objects chosen from a set of <span class="math inline">\(n\)</span> objects. <span class="math inline">\(P(n,k)\)</span> denotes the number of <span class="math inline">\(k\)</span>-permutations from a set of size <span class="math inline">\(n\)</span>.</p>
+</div>
+</div>
+<div id="thm-perms" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 3.1</strong></span> Explain why the number of <span class="math inline">\(k\)</span>-permutations from a set of size <span class="math inline">\(n\)</span> is <span class="math inline">\(P(n,k) = \dfrac{n!}{(n-k)!}\)</span>.</p>
+</div>
+<div id="exr-bootstrap" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.10</strong></span> The “bootstrap” is a statistical method for generating a new data set that is like an existing one. Suppose we have a data set consisting of 6 observations: <span class="math inline">\(x_1,x_2,x_3,x_4,x_5,x_6.\)</span> To generate a bootstrap data set, we sample from the original data set with replacement, meaning that it is possible for each observation to be sampled more than once. An example bootstrap data set would be <span class="math inline">\(x_2, x_3, x_4, x_2, x_1, x_3\)</span>. What is the probability that the bootstrap data set contains each observation exactly once?</p>
+</div>
+<div id="exr-playlist" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.11</strong></span> As I work in the evenings, I often listen to music. Suppose that I have a playlist of <span class="math inline">\(n=50\)</span> songs and I listen to them on shuffle where the software always selects from the list with equal probability when selecting which song to play next. If I listen to <span class="math inline">\(k=10\)</span> songs, what is the probability that at least one of the songs will be duplicated? What about if I listen to <span class="math inline">\(k=30\)</span> songs? (Hint: think about the complement of the desired probability!)</p>
+</div>
+<div id="exr-birthday" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.12</strong></span> There are <span class="math inline">\(p\)</span> people in the room. Assume that each person’s birthday is equally likely to be any of 365 days (ignore leap years!) and that everyone’s birthdays are independent. What is the probability that no one in the room has the same birthday? What is the least value of <span class="math inline">\(p\)</span> for which there is at least a 50% chance that two people do share a birthday?</p>
+</div>
+<div id="exr-countsubs" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.13</strong></span> Let <span class="math inline">\(S = \{1,2,3,4,5\}\)</span>. Answer each of the following:</p>
+<ol type="a">
+<li><p>How many ordered pairs with elements from <span class="math inline">\(S\)</span> are there?</p></li>
+<li><p>How many ordered triples with elements from <span class="math inline">\(S\)</span> are there?</p></li>
+<li><p>How many different two-element subsets of <span class="math inline">\(S\)</span> are there? (Recall that order does not matter in sets.)</p></li>
+<li><p>How many different three-element subsets of <span class="math inline">\(S\)</span> are there?</p></li>
+<li><p>How are the answers to (a) and (c) related? What about (b) and (d)?</p></li>
 </ol>
 </div>
+<div id="thm-comb" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 3.2</strong></span> Explain why the number of ways to pick a subset of size <span class="math inline">\(k\)</span> from a set of size <span class="math inline">\(n\)</span> is <span class="math inline">\(\dfrac{n!}{k! (n-k)!}\)</span>.</p>
 </div>
-<div id="thm-axioms" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2.1</strong></span> Using the probability axioms, prove the following:</p>
-<ul>
-<li><p>For any event <span class="math inline">\(A\)</span>, <span class="math inline">\(P(A^C) = 1 - P(A)\)</span>.</p></li>
-<li><p>If <span class="math inline">\(A \subseteq B\)</span>, then <span class="math inline">\(P(A) \leq P(B)\)</span>.</p></li>
-</ul>
-</div>
-<div id="exr-tournament" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.2</strong></span> Math, CS, Business, and English compete in a tournament, and exactly one of them will win. Business and CS have the same chance of winning the tournament. Math is three times as likely to win the tournament as English. The probability that either Math or Business wins the tournament is 0.7. Find the probabilities of each team winning the tournament.</p>
-</div>
-<div id="thm-equal" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2.2</strong></span> Prove that in a finite sample space <span class="math inline">\(S\)</span> with all outcomes equally likely, the probability of an event <span class="math inline">\(A\)</span> is <span class="math inline">\(P(A) = \dfrac{|A|}{|S|}\)</span>.</p>
-</div>
-<div id="exr-rollpairs" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.3</strong></span> You roll a fair six-sided die twice. Let <span class="math inline">\(X_1\)</span> be the outcome of the first roll and <span class="math inline">\(X_2\)</span> the outcome of the second roll. Describe the sample space <span class="math inline">\(S\)</span> as a set of ordered pairs <span class="math inline">\((X_1, X_2)\)</span>. What outcomes are in the event <span class="math inline">\(A\)</span> defined as the event that <span class="math inline">\(X_1 + X_2 = 6\)</span>? What is the probability of <span class="math inline">\(A\)</span>?</p>
-</div>
-<div id="exr-pcp" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.4</strong></span> The probability that a visit to a primary care physician’s (PCP) office results in neither lab work nor referral to a specialist is 40%. Of those coming to a PCP’s office, 45% are referred to specialists and 30% require lab work. Calculate the probability that a visit to a PCP’s office results in both lab work and referral to a specialist. CITE SAMPLE P</p>
-</div>
-<p>Sample spaces can be countable, as in the examples above. We call these <strong>discrete probability models</strong>. In other cases, the sample space can be uncountable. We call these <strong>continuous probability models</strong>.</p>
-<div id="exr-jobtime" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.5</strong></span> Let <span class="math inline">\(T\)</span> be the time in hours to complete a certain job at a factory. Based on historical data, we know that <span class="math display">\[P(T \leq t) = \begin{cases} \frac{1}{16} t^2 &amp; \mathrm{for~} 0 \leq t \leq 4; \\ 1 &amp; \mathrm{for~} t&gt;4. \end{cases}\]</span> Find the probability that the job needs 2 hours.</p>
-</div>
-<div id="nte-conditional" class="callout callout-style-default callout-note callout-titled">
+<div id="nte-combination" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition&nbsp;2.2: Conditional Probability
+Definition&nbsp;3.3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, the <strong>conditional probability</strong> of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span>, written <span class="math inline">\(P(A|B)\)</span>, is the probability that event <span class="math inline">\(A\)</span> occurs if we know that event <span class="math inline">\(B\)</span> occurred. That is, <span class="math inline">\(P(A|B) = \dfrac{P(A \cap B)}{P(B)}\)</span>.</p>
+<p>##Combination</p>
+<p>The <strong>combination</strong> <span class="math inline">\(C(n,k)\)</span> or <span class="math inline">\(\binom{n}{k}\)</span>, usually read “<span class="math inline">\(n\)</span> choose <span class="math inline">\(k\)</span>,” is the number of ways to pick <span class="math inline">\(k\)</span> unordered things from a set of size <span class="math inline">\(n\)</span>.</p>
 </div>
 </div>
-<div id="exr-cond" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.6</strong></span> If I roll a fair six-sided die, what is the probability that I roll a 6? Now suppose that after I roll the die, I tell you that I rolled an even number. What is the updated probability that I rolled a 6?</p>
-<p>(Note: In the language of conditional probability, this is the probability that I rolled a 6 given that I rolled an even number, or <span class="math inline">\(P(6\vert ~ \mathrm{even})\)</span>.)</p>
+<div id="exr-aces" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.14</strong></span> As part of a card game, I am dealt three cards from a standard 52-card deck. How many possible hands could I have? What is the probability that my hand does not contain an ace? (There are four aces in the deck.)</p>
 </div>
-<div id="exr-twoflips" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.7</strong></span> Suppose I flip two fair coins and don’t show you the results. - What is the probability that both flips were tails?</p>
-<ul>
-<li><p>Suppose that I tell you that the first flip was a tail. Given that information, what is the probability that both flips were tails?</p></li>
-<li><p>Suppose that you ask me whether I got at least one tail, and I say yes. Given that information, what is the probability that both flips were tails?</p></li>
-</ul>
+<div id="exr-hhtt" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.15</strong></span> How many distinct sequences could I make using two copies of the letter <span class="math inline">\(H\)</span> and two copies of the letter <span class="math inline">\(T\)</span>?</p>
 </div>
-<div id="nte-independent" class="callout callout-style-default callout-note callout-titled">
+<div id="exr-unfaircoin" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.16</strong></span> I flip an unfair coin with <span class="math inline">\(P(H) = p\)</span> four times. Find the probability that I flip exactly two tails. (Hint: What is the probability of the outcome <span class="math inline">\(TTHH\)</span>? What about <span class="math inline">\(HTHT\)</span>?)</p>
+</div>
+<div id="nte-binomial" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition&nbsp;2.3: Independence
+Definition&nbsp;3.4
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We call two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> <strong>independent</strong> if <span class="math inline">\(P(A \cap B) = P(A) P(B)\)</span>.</p>
+<p>##Bernoulli Trials and Binomial Experiments</p>
+<p>A <strong>Bernoulli trial</strong> is a random experiment with two possible outcomes: success with probability <span class="math inline">\(p\)</span> or failure with probability <span class="math inline">\(1-p\)</span>. A <strong>binomial experiment</strong> is a series of <span class="math inline">\(n\)</span> independent Bernoulli trials in which we count the number of successes.</p>
 </div>
 </div>
-<div id="exr-52ind" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.8</strong></span> Suppose I draw the top card from a shuffled, standard 52-card deck. Let <span class="math inline">\(A\)</span> be the event that the card is a three and <span class="math inline">\(B\)</span> be the event that the card is a club. Show that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent.</p>
+<div id="thm-binom" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 3.3</strong></span> Explain why the probability of <span class="math inline">\(k\)</span> successes in a binomial experiment is <span class="math display">\[P(k) = \binom{n}{k} p^k (1-p)^{n-k}.\]</span></p>
 </div>
-<div id="exr-cardind" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.9</strong></span> Suppose I make a special card deck from a standard deck. I include only red 2, 3, and 4 cards and black 5 and 6 cards, and then I shuffle the deck and draw the top card. Let <span class="math inline">\(E\)</span> be the event that the card is even and <span class="math inline">\(F\)</span> be the event that it is red. Show that <span class="math inline">\(E\)</span> and <span class="math inline">\(F\)</span> are not independent.</p>
+<div id="exr-parkinsons" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.17</strong></span> A woman, Joy, claimed that she could smell Parkinson’s disease. Researchers gave her 12 shirts and asked her to identify which ones had been worn by someone with Parkinson’s. Initially, researchers believe that she correctly identified 11 of the shirts. If she had been randomly guessing, what is the probability that she would have identified <strong>at least</strong> 11 of the shirts correctly? Based on this, do you believe her claim or not? (When you’re done with the problem, I’ll tell you what happened next!)</p>
 </div>
-<div id="exr-washingmachine" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.10</strong></span> A washing machine is made up of many components. For simplicity, suppose that the ones that commonly break come in three categories: the motion system, timing control, and the water system. If any of those subsystems fails, the washing machine fails. Suppose the subsystems operate and fail independently of each other and that the probability of the motion system failing within ten years is 0.05, the probability of the control system failing within ten years is 0.015, and the probability of the water system failing within ten years is 0.07. What is the probability that the washing machine still works after ten years?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div id="exr-tennis" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.18</strong></span> A particular tennis player has a first serve percentage (which means his attempt at serving the ball lands in a valid place) across his career of 65%. In one set, 17 of his 18 first serves were valid. What is the probability of this player serving at least this well across 18 first serves?</p>
 </div>
-<div id="thm-indcond" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2.3</strong></span> Prove that if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, then <span class="math inline">\(P(A|B) = P(A)\)</span>.</p>
-</div>
-<div id="exr-sumind" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.11</strong></span> Suppose you toss a pair of fair six-sided dice. Let <span class="math inline">\(A\)</span> be the event that the sum of the rolls is a multiple of 2. Let <span class="math inline">\(B\)</span> be the event that the sum of the rolls is a multiple of 3. Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent events? Why or why not?</p>
-</div>
-<div id="thm-total" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2.4 (Law of Total Probability)</strong></span> Prove that if <span class="math inline">\(B_1, B_2, B_3, \cdots\)</span> are a partition of the sample space <span class="math inline">\(S\)</span>, then for an event <span class="math inline">\(A\)</span>, <span class="math inline">\(P(A) = \sum_i P(A|B_i) P(B_i)\)</span>.</p>
-</div>
-<div id="exr-Elise" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.12</strong></span> Elise is playing a board game that involves rolling a fair six-sided die and spinning a spinner. If the die roll is a multiple of 3, the player spins a spinner with 4 equally-sized regions numbered 1 through 4. Otherwise, the player spins a spinner with 8 equally-sized regions numbered 1 through 8. The spinner result determines how far the player moves on the board. What is the probability that Elise will only move 1 spot on her turn?</p>
-</div>
-<div id="thm-Bayes" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2.5 (Bayes’ Rule)</strong></span> Prove that <span class="math inline">\(P(B|A) = \dfrac{P(A|B)P(B)}{P(A)}\)</span>.</p>
-</div>
-<p>Let’s use Bayes’ Rule a bit. The Law of Total Probability will also be helpful!</p>
-<div id="exr-boardgames" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.13</strong></span> About 50.5% of respondents to a survey about games were 45 years old or older. Of people ages 18-44, about 37.5% said they play board games at least monthly. Of people ages 45+, about 20.2% said they play board games at least monthly.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>A person who plays board games at least once a month is randomly chosen from the survey respondents. What is the probability that they are 45+ years old?</p>
-</div>
-<div id="exr-charity" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.14</strong></span> A survey was conducted of those who say they contributed to charity during the past year. The survey results indicate that 80% of this population claims to have contributed at least $500, 40% overstated the value of their contributions, and 38% did both. Calculate the probability that a randomly selected person overstated the value of their contribution, given that they claimed to have contributed less than $500.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-</div>
-<div id="exr-bankruptcy" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.15</strong></span> Small businesses in a particular city are categorized as retail, service, or other. In a study of yearly bankruptcies of small businesses in the city, this information was observed:</p>
-<ul>
-<li><p>55% of the small businesses were retail, and of those, 10% went bankrupt.</p></li>
-<li><p>30% of the small businesses were service, and of those, 12% went bankrupt.</p></li>
-<li><p>The rest of the businesses were other, and 5% of those went bankrupt.</p></li>
-</ul>
-<p>An auditor randomly selected a small business that went bankrupt last year. Calculate the probability that it was a service business.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-</div>
-<div id="thm-compindep" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2.6</strong></span> Prove that if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, then <span class="math inline">\(A^C\)</span> and <span class="math inline">\(B\)</span> are independent.</p>
-</div>
-<div id="exr-bayes" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.16</strong></span> The Massachusetts Bay Transit Authority (MBTA) tracks and publishes data about the reliability of three lines (Blue, Orange, and Red) of Boston’s subway system, the T. The MBTA tracks the percent of riders of that line who reached their destination within five minutes of the expected time. (We’ll call those trips “on time.”)</p>
-<p>In one 12-month period, 16% of trips included in the data were on the Blue Line, 38% were on the Orange Line, and 46% were on the Red Line. Unfortunately, 9% of trips did not arrive on time. Of those, 14% were on the Blue Line, 21% were on the Orange Line, and the remaining 65% were on the Red Line.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
-<p>Marie-Caroline and Jocelyn each took separate trips included in the dataset. If Marie-Caroline’s trip was on the Red Line, what is the probability that it did not arrive on time? If Jocelyn’s trip was on time, what is the probability that it was on the Orange Line?</p>
+<div id="exr-coprez" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.19</strong></span> A club needs to choose two co-presidents. The names of all the current members are put into a hat, and the first two that are drawn will be co-presidents. The names are not replaced once they are drawn (one person cannot be two presidents). You want to know the probability that the presidents both have the same major. Is this binomial, and why/why not?</p>
 </div>
 </section>
-<section id="further-practice" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="further-practice"><span class="header-section-number">2.3</span> Further Practice</h2>
+<section id="further-practice" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="further-practice"><span class="header-section-number">3.3</span> Further Practice</h2>
 <p>To come!</p>
 </section>
-<section id="challenge-questions" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="challenge-questions"><span class="header-section-number">2.4</span> Challenge Questions</h2>
-<p>To come!</p>
+<section id="challenge-questions" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="challenge-questions"><span class="header-section-number">3.4</span> Challenge Questions</h2>
+<div id="exr-setgame" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.20</strong></span> The game SET involves a deck of 81 cards. Each card has a picture of some number (one, two, or three) of shapes (oval, squiggle, or diamond), which is painted in one color (green, red, or purple), with some shading (solid, hatched, or empty). Each number-shape-color-shading combination appears in the deck exactly once. Three cards are called a set if for each attribute, either all three cards match or all three are different. (For example, for color, either all three cards need to be the same color, or they each need to be a different color.) How many different sets are in the deck? What is the probability of there being a set in the first 4 cards dealt from a well-shuffled deck?</p>
+</div>
+<div id="exr-mail" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.21</strong></span> A mail carrier delivers mail to nineteen houses on the east side of Blossom Street. The carrier notes that no two adjacent houses ever get mail on the same day, but that there are never more than two houses in a row that get no mail on the same day. How many different patterns of mail delivery are possible?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</div>
 
 
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>CITE Doganaksoy et al Product reliability (Significance 2023)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>CITE YOUGOV SURVEY<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Adapted from SAMPLE P CITE PROBLEM<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Adapted from SAMPLE P CITE THIS PROBLEM<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>CITE MBTA DATA 6/5/26 AND ADAPTED FROM BAYES RULES<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>From AIME 2011 CITE<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -800,13 +786,13 @@ Definition&nbsp;2.3: Independence
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./set-theory.html" class="pagination-link" aria-label="Set Theory">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Set Theory</span></span>
+      <a href="./prob-laws.html" class="pagination-link" aria-label="Laws of Probability">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Laws of Probability</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./counting.html" class="pagination-link" aria-label="Counting">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Counting</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./discrete-rvs.html" class="pagination-link" aria-label="Introduction to Discrete Random Variables">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to Discrete Random Variables</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

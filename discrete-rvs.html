@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Laws of Probability – Probability By Inquiry</title>
+<title>4&nbsp; Introduction to Discrete Random Variables – Probability By Inquiry</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./counting.html" rel="next">
-<link href="./set-theory.html" rel="prev">
+<link href="./summary.html" rel="next">
+<link href="./counting.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -114,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prob-laws.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Laws of Probability</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./discrete-rvs.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to Discrete Random Variables</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -159,7 +159,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-laws.html" class="sidebar-item-text sidebar-link active">
+  <a href="./prob-laws.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Laws of Probability</span></span></a>
   </div>
 </li>
@@ -171,7 +171,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./discrete-rvs.html" class="sidebar-item-text sidebar-link">
+  <a href="./discrete-rvs.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to Discrete Random Variables</span></span></a>
   </div>
 </li>
@@ -197,10 +197,10 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2.1</span> Introduction</a></li>
-  <li><a href="#definitions-exercises-and-theorems" id="toc-definitions-exercises-and-theorems" class="nav-link" data-scroll-target="#definitions-exercises-and-theorems"><span class="header-section-number">2.2</span> Definitions, Exercises, and Theorems</a></li>
-  <li><a href="#further-practice" id="toc-further-practice" class="nav-link" data-scroll-target="#further-practice"><span class="header-section-number">2.3</span> Further Practice</a></li>
-  <li><a href="#challenge-questions" id="toc-challenge-questions" class="nav-link" data-scroll-target="#challenge-questions"><span class="header-section-number">2.4</span> Challenge Questions</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">4.1</span> Introduction</a></li>
+  <li><a href="#definitions-exercises-and-theorems" id="toc-definitions-exercises-and-theorems" class="nav-link" data-scroll-target="#definitions-exercises-and-theorems"><span class="header-section-number">4.2</span> Definitions, Exercises, and Theorems</a></li>
+  <li><a href="#further-practice" id="toc-further-practice" class="nav-link" data-scroll-target="#further-practice"><span class="header-section-number">4.3</span> Further Practice</a></li>
+  <li><a href="#challenge-questions" id="toc-challenge-questions" class="nav-link" data-scroll-target="#challenge-questions"><span class="header-section-number">4.4</span> Challenge Questions</a></li>
   </ul>
 </nav>
     </div>
@@ -209,7 +209,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Laws of Probability</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to Discrete Random Variables</span></h1>
 </div>
 
 
@@ -226,174 +226,206 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
-<p>Now that we know something about how sets work, we’ll define probability and the axioms it follows. Most of this chapter will be working with those axioms and a few laws that result from them.</p>
+<section id="introduction" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">4.1</span> Introduction</h2>
+<p>WORDS</p>
 </section>
-<section id="definitions-exercises-and-theorems" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="definitions-exercises-and-theorems"><span class="header-section-number">2.2</span> Definitions, Exercises, and Theorems</h2>
-<div id="nte-setup" class="callout callout-style-default callout-note callout-titled">
+<section id="definitions-exercises-and-theorems" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="definitions-exercises-and-theorems"><span class="header-section-number">4.2</span> Definitions, Exercises, and Theorems</h2>
+<div id="nte-rv" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition&nbsp;2.1: Outcomes, Sample Space, and Events
+Definition&nbsp;4.1: Random Variable
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Consider a procedure (called a <strong>random experiment</strong>) that has a well-defined set of possible results. We call each possible result of that experiment an <strong>outcome</strong>, and the set of all outcomes is the <strong>sample space</strong>, usually denoted <span class="math inline">\(S.\)</span> An <strong>event</strong> is a subset of the sample space.</p>
+<p>A <strong>random variable</strong> <span class="math inline">\(X\)</span> is a function from the sample space to the real numbers. That is, <span class="math inline">\(X: S \rightarrow \mathbb{R}\)</span>.</p>
 </div>
 </div>
-<div id="exr-ss" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.1</strong></span> What is the sample space if I roll a standard six-sided die? Describe in words an event <span class="math inline">\(A\)</span> within this sample space that we might consider. How would you write that event as a subset of the sample space?</p>
-</div>
-<div id="tip-axioms" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Axioms&nbsp;2.1: Axioms of Probability
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(S\)</span> be a sample space. <strong>Probability</strong> is a function defined on events in that sample space, with the probability of event <span class="math inline">\(A\)</span> denoted as <span class="math inline">\(P(A)\)</span>. This function satisfies the following axioms:</p>
-<ol type="1">
-<li><p>For any event <span class="math inline">\(A\)</span>, <span class="math inline">\(P(A) \ge 0\)</span>.</p></li>
-<li><p><span class="math inline">\(P(S) = 1\)</span>.</p></li>
-<li><p>For mutually disjoint events <span class="math inline">\(A_1, A_2, A_3, \cdots\)</span>, we have <span class="math display">\[P\left(\bigcup_{i=0}^\infty A_i\right) = \sum_{i=1}^\infty P(A_i).\]</span></p></li>
+<p>Here are some examples of random variables: the sum of rolls of two dice, the number of heads in a sequence of 8 coin flips, the total winnings from playing a particular probability-based game, the number of hats given to the correct people when <span class="math inline">\(n\)</span> people are handed their hats back at random.</p>
+<div id="exr-rvrange" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.1</strong></span> Find the possible values (ranges of the functions) for each of these random variables:</p>
+<ol type="a">
+<li><p>The number of heads in three coin flips</p></li>
+<li><p>The time until you next receive an email</p></li>
+<li><p>The number of flips of a coin until either the first heads appears or <span class="math inline">\(n\)</span> flips occur</p></li>
+<li><p>The number of flips of a coin until the first heads appears</p></li>
+<li><p>The time until a cell phone is either plugged into a charger or dies</p></li>
+<li><p>The number of numbers 7 or above when four numbers from 0-9 are selected randomly, with repeats allowed</p></li>
+<li><p>The number of numbers 7 or above when four numbers from 0-9 are selected randomly, with repeats not allowed</p></li>
+<li><p>The time until the next occurrence of rain in a particular city</p></li>
 </ol>
 </div>
+<div id="exr-3heads" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.2</strong></span> Write the function definition for the random variable in <a href="#exr-rvrange" class="quarto-xref">Exercise&nbsp;<span>4.1</span></a> (a). In other words, find the sample space and map each outcome to a real number based on this random variable.</p>
 </div>
-<div id="thm-axioms" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2.1</strong></span> Using the probability axioms, prove the following:</p>
-<ul>
-<li><p>For any event <span class="math inline">\(A\)</span>, <span class="math inline">\(P(A^C) = 1 - P(A)\)</span>.</p></li>
-<li><p>If <span class="math inline">\(A \subseteq B\)</span>, then <span class="math inline">\(P(A) \leq P(B)\)</span>.</p></li>
-</ul>
-</div>
-<div id="exr-tournament" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.2</strong></span> Math, CS, Business, and English compete in a tournament, and exactly one of them will win. Business and CS have the same chance of winning the tournament. Math is three times as likely to win the tournament as English. The probability that either Math or Business wins the tournament is 0.7. Find the probabilities of each team winning the tournament.</p>
-</div>
-<div id="thm-equal" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2.2</strong></span> Prove that in a finite sample space <span class="math inline">\(S\)</span> with all outcomes equally likely, the probability of an event <span class="math inline">\(A\)</span> is <span class="math inline">\(P(A) = \dfrac{|A|}{|S|}\)</span>.</p>
-</div>
-<div id="exr-rollpairs" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.3</strong></span> You roll a fair six-sided die twice. Let <span class="math inline">\(X_1\)</span> be the outcome of the first roll and <span class="math inline">\(X_2\)</span> the outcome of the second roll. Describe the sample space <span class="math inline">\(S\)</span> as a set of ordered pairs <span class="math inline">\((X_1, X_2)\)</span>. What outcomes are in the event <span class="math inline">\(A\)</span> defined as the event that <span class="math inline">\(X_1 + X_2 = 6\)</span>? What is the probability of <span class="math inline">\(A\)</span>?</p>
-</div>
-<div id="exr-pcp" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.4</strong></span> The probability that a visit to a primary care physician’s (PCP) office results in neither lab work nor referral to a specialist is 40%. Of those coming to a PCP’s office, 45% are referred to specialists and 30% require lab work. Calculate the probability that a visit to a PCP’s office results in both lab work and referral to a specialist. CITE SAMPLE P</p>
-</div>
-<p>Sample spaces can be countable, as in the examples above. We call these <strong>discrete probability models</strong>. In other cases, the sample space can be uncountable. We call these <strong>continuous probability models</strong>.</p>
-<div id="exr-jobtime" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.5</strong></span> Let <span class="math inline">\(T\)</span> be the time in hours to complete a certain job at a factory. Based on historical data, we know that <span class="math display">\[P(T \leq t) = \begin{cases} \frac{1}{16} t^2 &amp; \mathrm{for~} 0 \leq t \leq 4; \\ 1 &amp; \mathrm{for~} t&gt;4. \end{cases}\]</span> Find the probability that the job needs 2 hours.</p>
-</div>
-<div id="nte-conditional" class="callout callout-style-default callout-note callout-titled">
+<p>We’ll separate random variables into multiple types, and we’ll talk about two of those types: discrete and continuous.</p>
+<div id="nte-discrete" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition&nbsp;2.2: Conditional Probability
+Definition&nbsp;4.2: Discrete Random Variable
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, the <strong>conditional probability</strong> of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span>, written <span class="math inline">\(P(A|B)\)</span>, is the probability that event <span class="math inline">\(A\)</span> occurs if we know that event <span class="math inline">\(B\)</span> occurred. That is, <span class="math inline">\(P(A|B) = \dfrac{P(A \cap B)}{P(B)}\)</span>.</p>
+<p>A <strong>discrete random variable</strong> is a random variable with a countable range. That is, it can only take on countably many values.</p>
 </div>
 </div>
-<div id="exr-cond" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.6</strong></span> If I roll a fair six-sided die, what is the probability that I roll a 6? Now suppose that after I roll the die, I tell you that I rolled an even number. What is the updated probability that I rolled a 6?</p>
-<p>(Note: In the language of conditional probability, this is the probability that I rolled a 6 given that I rolled an even number, or <span class="math inline">\(P(6\vert ~ \mathrm{even})\)</span>.)</p>
+<p>We’ll formally define a <strong>continuous</strong> random variable later, but for the moment, consider them to be random variables with uncountably infinite ranges.</p>
+<div id="exr-discrete" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.3</strong></span> Which random variables from <a href="#exr-rvrange" class="quarto-xref">Exercise&nbsp;<span>4.1</span></a> are discrete?</p>
 </div>
-<div id="exr-twoflips" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.7</strong></span> Suppose I flip two fair coins and don’t show you the results. - What is the probability that both flips were tails?</p>
-<ul>
-<li><p>Suppose that I tell you that the first flip was a tail. Given that information, what is the probability that both flips were tails?</p></li>
-<li><p>Suppose that you ask me whether I got at least one tail, and I say yes. Given that information, what is the probability that both flips were tails?</p></li>
-</ul>
-</div>
-<div id="nte-independent" class="callout callout-style-default callout-note callout-titled">
+<p>Okay, so we have discrete random variables. How do we start talking about probabilities associated with them?</p>
+<div id="nte-pmf" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition&nbsp;2.3: Independence
+Definition&nbsp;4.3: Probability Mass Function
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We call two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> <strong>independent</strong> if <span class="math inline">\(P(A \cap B) = P(A) P(B)\)</span>.</p>
+<p>Let <span class="math inline">\(X\)</span> be a discrete random variable with range <span class="math inline">\(\{x_1, x_2, x_3, \cdots\}\)</span> The <strong>probability mass function</strong> (or PMF) <span class="math inline">\(P_X\)</span> assigns a probability to each value in the range. That is, <span class="math inline">\(P_X(x_k) = P(X = x_k)\)</span> for every <span class="math inline">\(x_k\)</span> in <span class="math inline">\(X\)</span>’s range.</p>
 </div>
 </div>
-<div id="exr-52ind" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.8</strong></span> Suppose I draw the top card from a shuffled, standard 52-card deck. Let <span class="math inline">\(A\)</span> be the event that the card is a three and <span class="math inline">\(B\)</span> be the event that the card is a club. Show that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent.</p>
+<div id="exr-3headpmf" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.4</strong></span> Find the probability mass function for the random variable you defined in <a href="#exr-rvrange" class="quarto-xref">Exercise&nbsp;<span>4.1</span></a> (a) and <a href="#exr-3heads" class="quarto-xref">Exercise&nbsp;<span>4.2</span></a>.</p>
 </div>
-<div id="exr-cardind" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.9</strong></span> Suppose I make a special card deck from a standard deck. I include only red 2, 3, and 4 cards and black 5 and 6 cards, and then I shuffle the deck and draw the top card. Let <span class="math inline">\(E\)</span> be the event that the card is even and <span class="math inline">\(F\)</span> be the event that it is red. Show that <span class="math inline">\(E\)</span> and <span class="math inline">\(F\)</span> are not independent.</p>
+<div id="exr-roll6" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.5</strong></span> I have a fair six-sided die which I roll until I roll a 6 for the first time. Let <span class="math inline">\(X\)</span> be the total number of die rolls. Find the probability mass function of <span class="math inline">\(X\)</span>.</p>
 </div>
-<div id="exr-washingmachine" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.10</strong></span> A washing machine is made up of many components. For simplicity, suppose that the ones that commonly break come in three categories: the motion system, timing control, and the water system. If any of those subsystems fails, the washing machine fails. Suppose the subsystems operate and fail independently of each other and that the probability of the motion system failing within ten years is 0.05, the probability of the control system failing within ten years is 0.015, and the probability of the water system failing within ten years is 0.07. What is the probability that the washing machine still works after ten years?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>The PMF isn’t the only useful way to talk about probabilities associated with a discrete random variable.</p>
+<div id="nte-cdf" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div id="thm-indcond" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2.3</strong></span> Prove that if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, then <span class="math inline">\(P(A|B) = P(A)\)</span>.</p>
+<div class="callout-title-container flex-fill">
+Definition&nbsp;4.4: Cumulative Distribution Function
 </div>
-<div id="exr-sumind" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.11</strong></span> Suppose you toss a pair of fair six-sided dice. Let <span class="math inline">\(A\)</span> be the event that the sum of the rolls is a multiple of 2. Let <span class="math inline">\(B\)</span> be the event that the sum of the rolls is a multiple of 3. Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent events? Why or why not?</p>
 </div>
-<div id="thm-total" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2.4 (Law of Total Probability)</strong></span> Prove that if <span class="math inline">\(B_1, B_2, B_3, \cdots\)</span> are a partition of the sample space <span class="math inline">\(S\)</span>, then for an event <span class="math inline">\(A\)</span>, <span class="math inline">\(P(A) = \sum_i P(A|B_i) P(B_i)\)</span>.</p>
+<div class="callout-body-container callout-body">
+<p>The <strong>cumulative distribution function</strong> (or CDF) of a random variable <span class="math inline">\(X\)</span> is <span class="math inline">\(F_X (x) = P(X \leq x)\)</span> for all <span class="math inline">\(x \in \mathbb{R}\)</span>.</p>
 </div>
-<div id="exr-Elise" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.12</strong></span> Elise is playing a board game that involves rolling a fair six-sided die and spinning a spinner. If the die roll is a multiple of 3, the player spins a spinner with 4 equally-sized regions numbered 1 through 4. Otherwise, the player spins a spinner with 8 equally-sized regions numbered 1 through 8. The spinner result determines how far the player moves on the board. What is the probability that Elise will only move 1 spot on her turn?</p>
 </div>
-<div id="thm-Bayes" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2.5 (Bayes’ Rule)</strong></span> Prove that <span class="math inline">\(P(B|A) = \dfrac{P(A|B)P(B)}{P(A)}\)</span>.</p>
+<div id="exr-cdfpractice" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.6</strong></span> Find the cumulative distribution functions for the random variables you studied in <a href="#exr-3headpmf" class="quarto-xref">Exercise&nbsp;<span>4.4</span></a> and <a href="#exr-roll6" class="quarto-xref">Exercise&nbsp;<span>4.5</span></a>.</p>
+<p>(Hint: For the random variable from <a href="#exr-roll6" class="quarto-xref">Exercise&nbsp;<span>4.5</span></a> the expression for the sum of a geometric sequence might be helpful. Feel free to look this up! You could alternatively think about the complement of what you’re looking for.)</p>
 </div>
-<p>Let’s use Bayes’ Rule a bit. The Law of Total Probability will also be helpful!</p>
-<div id="exr-boardgames" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.13</strong></span> About 50.5% of respondents to a survey about games were 45 years old or older. Of people ages 18-44, about 37.5% said they play board games at least monthly. Of people ages 45+, about 20.2% said they play board games at least monthly.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>A person who plays board games at least once a month is randomly chosen from the survey respondents. What is the probability that they are 45+ years old?</p>
+<div id="exr-pmfcdf" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.7</strong></span> Find expressions in terms of <span class="math inline">\(F_X\)</span> and <span class="math inline">\(P_X\)</span> for <span class="math inline">\(P(a &lt; X \leq b)\)</span> and <span class="math inline">\(P(X &lt; x)\)</span> if <span class="math inline">\(X\)</span> is a discrete random variable.</p>
 </div>
-<div id="exr-charity" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.14</strong></span> A survey was conducted of those who say they contributed to charity during the past year. The survey results indicate that 80% of this population claims to have contributed at least $500, 40% overstated the value of their contributions, and 38% did both. Calculate the probability that a randomly selected person overstated the value of their contribution, given that they claimed to have contributed less than $500.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>It’s often useful to think about the “typical” or value of a random variable. Let’s define that formally.</p>
+<div id="nte-expectation" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div id="exr-bankruptcy" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.15</strong></span> Small businesses in a particular city are categorized as retail, service, or other. In a study of yearly bankruptcies of small businesses in the city, this information was observed:</p>
-<ul>
-<li><p>55% of the small businesses were retail, and of those, 10% went bankrupt.</p></li>
-<li><p>30% of the small businesses were service, and of those, 12% went bankrupt.</p></li>
-<li><p>The rest of the businesses were other, and 5% of those went bankrupt.</p></li>
-</ul>
-<p>An auditor randomly selected a small business that went bankrupt last year. Calculate the probability that it was a service business.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div class="callout-title-container flex-fill">
+Definition&nbsp;4.5: Expected Value
 </div>
-<div id="thm-compindep" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2.6</strong></span> Prove that if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, then <span class="math inline">\(A^C\)</span> and <span class="math inline">\(B\)</span> are independent.</p>
 </div>
-<div id="exr-bayes" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.16</strong></span> The Massachusetts Bay Transit Authority (MBTA) tracks and publishes data about the reliability of three lines (Blue, Orange, and Red) of Boston’s subway system, the T. The MBTA tracks the percent of riders of that line who reached their destination within five minutes of the expected time. (We’ll call those trips “on time.”)</p>
-<p>In one 12-month period, 16% of trips included in the data were on the Blue Line, 38% were on the Orange Line, and 46% were on the Red Line. Unfortunately, 9% of trips did not arrive on time. Of those, 14% were on the Blue Line, 21% were on the Orange Line, and the remaining 65% were on the Red Line.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
-<p>Marie-Caroline and Jocelyn each took separate trips included in the dataset. If Marie-Caroline’s trip was on the Red Line, what is the probability that it did not arrive on time? If Jocelyn’s trip was on time, what is the probability that it was on the Orange Line?</p>
+<div class="callout-body-container callout-body">
+<p>The <strong>expectation</strong> or <strong>expected value</strong> of a random variable <span class="math inline">\(X\)</span> with probability mass function <span class="math inline">\(P_X\)</span> is <span class="math inline">\(E[X] = \sum_k x_k P_X(x_k)\)</span>, that is, a weighted average of the values in the range of <span class="math inline">\(X\)</span>.</p>
+</div>
+</div>
+<div id="exr-endie" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.8</strong></span> Find the expected value of a roll of a fair <span class="math inline">\(n\)</span>-sided die.</p>
+</div>
+<div id="exr-cookies" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.9</strong></span> A professor bakes cookies for finals week. The probability that she bakes 3 batches of cookies is 0.25, the probability that she bakes 4 batches of cookies is 0.3, the probability that she bakes 5 batches of cookies is 0.35, and the probability that she bakes 6 batches of cookies is 0.1. Find the expected value of the number of batches of cookies she bakes.</p>
+</div>
+<div id="exr-buses" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.10</strong></span> A math camp of 120 students is driven in 3 buses to an amusement park. There are 36 students in one of the buses, 36 in the second bus, and 48 in the third bus. (Many students run late…) When the buses arrive, one of the 120 students is randomly chosen. Let <span class="math inline">\(X\)</span> denote the number of students on the bus of that randomly chosen student, and find <span class="math inline">\(E[X]\)</span>. Is this less than, equal to, or greater than the average number of students per bus, and why?</p>
+</div>
+<div id="exr-classsize" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.11</strong></span> The class size paradox states that students tend to have a larger average class size than a school’s stated average class size. Explain this using your result from the last exercise.</p>
+</div>
+<div id="exr-chuckaluck" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.12</strong></span> In the carnival game chuck-a-luck, three dice are rolled. You make a bet on a particular number (1, 2, 3, 4, 5, 6) showing up. The payout is 1 to 1 (that is, $1 of net winnings for every $1 you bet) if that number shows on (exactly) one die, 2 to 1 if it shows on two dice, and 3 to 1 if it shows up on all three. You lose your initial stake if your number does not show on any of the dice. If you make a $1 bet on the number three, what is your expected net winnings?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</div>
+<p>Some random variables are functions of other random variables. The next result is one of two results that tell us that expectation is , or in other words, expectation behaves nicely with linear combinations of random variables. (We’ll need more tools to get to the second result.)</p>
+<div id="thm-linear1" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4.1</strong></span> Prove that for any <span class="math inline">\(a, b \in \mathbb{R}\)</span>, <span class="math inline">\(E[aX+b] = aE[X] + b\)</span>.</p>
+</div>
+<div id="exr-xsq" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.13</strong></span> Consider a random variable <span class="math inline">\(X\)</span> with <span class="math inline">\(P_X(x_k) = \frac{1}{7}\)</span> for <span class="math inline">\(x_k \in \{-3, -2, -1, 0, 1, 2, 3\}\)</span>. Let another random variable <span class="math inline">\(Y = X^2\)</span>. Find the range of <span class="math inline">\(Y\)</span> and the probability mass function <span class="math inline">\(P_Y\)</span>. Using <span class="math inline">\(P_Y\)</span>, find <span class="math inline">\(E[Y]\)</span>.</p>
+</div>
+<div id="thm-lotus" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4.2 (Law of the Unconscious Statistician (LOTUS))</strong></span> Let <span class="math inline">\(X\)</span> be a random variable, and let <span class="math inline">\(Y=g(X)\)</span> for some function <span class="math inline">\(g\)</span>. Then we have <span class="math inline">\(E[Y] = \sum_k g(x_k) P_X(x_k)\)</span>. While this holds in general, prove it for the case where the range of <span class="math inline">\(X\)</span> is finite.</p>
+</div>
+<p>Now we’ll think about measuring the spread or variation of the possible values of <span class="math inline">\(X\)</span>. The measures we’ll use are related to the distance between values of <span class="math inline">\(X\)</span> and its expectation.</p>
+<div id="nte-varsd" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition&nbsp;4.6: Variance and Standard Deviation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(X\)</span> be a random variable with expectation <span class="math inline">\(E[X]\)</span>. Then the <strong>variance</strong> of <span class="math inline">\(X\)</span>, denoted <span class="math inline">\(\mathrm{Var}(X)\)</span>, is given by <span class="math inline">\(\mathrm{Var}(X) = E[(X-E[X])^2]\)</span>. The square root of variance is called <strong>standard deviation</strong>, or <span class="math inline">\(\mathrm{SD}(X)\)</span>.</p>
+</div>
+</div>
+<div id="exr-vardie" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.14</strong></span> Find <span class="math inline">\(\mathrm{Var}(X)\)</span> if <span class="math inline">\(X\)</span> is the outcome when a fair six-sided die is rolled.</p>
+</div>
+<p>The definition of variance isn’t the easiest to actually do calculations with. Luckily, there’s an easier way. Let’s see it and prove that it works:</p>
+<div id="thm-var" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4.3</strong></span> Prove that <span class="math inline">\(\mathrm{Var}(X)\)</span> can be written as <span class="math inline">\(E[X^2] - (E[X])^2\)</span>.</p>
+</div>
+<div id="exr-vardie2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.15</strong></span> Recalculate the variance in <a href="#exr-vardie" class="quarto-xref">Exercise&nbsp;<span>4.14</span></a> using the form of variance from <a href="#thm-var" class="quarto-xref">Theorem&nbsp;<span>4.3</span></a>.</p>
+</div>
+<div id="thm-varnonlin" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4.4</strong></span> Prove that <span class="math inline">\(\mathrm{Var}(aX+b) = a^2 \mathrm{Var}(X)\)</span>.</p>
+</div>
+<div id="exr-sdnonlin" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.16</strong></span> In terms of <span class="math inline">\(\mathrm{SD}(X)\)</span>, what is <span class="math inline">\(\mathrm{SD}(aX+b)\)</span> where <span class="math inline">\(a,b\)</span> are real numbers with <span class="math inline">\(a \ne 0\)</span>?</p>
+</div>
+<div id="exr-marblescasino" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.17</strong></span> A box contains five red and five blue marbles. Two marbles are withdrawn randomly. If they are the same color, you win $1.10, and if they are different colors, you lose $1.00. Find the expected value of the amount you win and the variance of the amount you win. (Please do not use this to start a casino on the quad.)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</div>
+<div class="{exr-varsq}">
+<p>Find <span class="math inline">\(\mathrm{Var}(X)\)</span> and <span class="math inline">\(\mathrm{Var}(Y)\)</span> from <a href="#exr-xsq" class="quarto-xref">Exercise&nbsp;<span>4.13</span></a>.</p>
+</div>
+<div class="{exr-pi}">
+<p>Let <span class="math inline">\(X\)</span> be a discrete random variable with range <span class="math inline">\(\{0, \frac{\pi}{4}, \frac{\pi}{2}, \frac{3\pi}{4}, \pi\}\)</span> such that <span class="math inline">\(P_X(x_i) = \frac{1}{5}\)</span> for all <span class="math inline">\(x_i\)</span> in the range. Find <span class="math inline">\(E[\cos(X)]\)</span> and <span class="math inline">\(\mathrm{Var}(\cos(X))\)</span>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+</div>
+<div class="{exr-carmain}">
+<p>Suppose the annual cost of maintaining and repairing a car in Fitchburg has an expected value of $500 and a variance of 280 square dollars<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. A tax of 25% is introduced on all items associated with the maintenance and repair of cars, so everything is now 25% more expensive. Now what are the expected value and variance of annual car maintenance and repair?<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
 </div>
 </section>
-<section id="further-practice" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="further-practice"><span class="header-section-number">2.3</span> Further Practice</h2>
-<p>To come!</p>
+<section id="further-practice" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="further-practice"><span class="header-section-number">4.3</span> Further Practice</h2>
 </section>
-<section id="challenge-questions" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="challenge-questions"><span class="header-section-number">2.4</span> Challenge Questions</h2>
-<p>To come!</p>
+<section id="challenge-questions" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="challenge-questions"><span class="header-section-number">4.4</span> Challenge Questions</h2>
+<div id="exr-logcdf" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.18</strong></span> Let <span class="math inline">\(X\)</span> be a random variable, and let <span class="math inline">\(Y = e^X\)</span>. (In function form, this means that <span class="math inline">\(Y(x) = e^{X(x)}.\)</span>) Find the cumulative distribution function <span class="math inline">\(F_Y\)</span> in terms of <span class="math inline">\(F_X\)</span>. (In other words, if <span class="math inline">\(F_Y (y) = F_X (x)\)</span>, how are <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span> related?)</p>
+</div>
+<div id="exr-diegame" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.19</strong></span> Consider the following game. You roll a fair die once and observe the result <span class="math inline">\(X\)</span>. At this point, you can stop the game and win <span class="math inline">\(X\)</span> dollars. You can also choose to roll the die for the second time to observe the value <span class="math inline">\(Y\)</span>. In this case, you will win <span class="math inline">\(Y\)</span> dollars. Let <span class="math inline">\(W\)</span> be the value that you win in this game. What strategy do you use to maximize <span class="math inline">\(E[W]\)</span>? What is the maximum <span class="math inline">\(E[W]\)</span> you can achieve using your strategy? What is <span class="math inline">\(\mathrm{Var}(W)\)</span> using your strategy?<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+</div>
 
 
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>CITE Doganaksoy et al Product reliability (Significance 2023)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>CITE YOUGOV SURVEY<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Adapted from SAMPLE P CITE PROBLEM<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Adapted from SAMPLE P CITE THIS PROBLEM<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>CITE MBTA DATA 6/5/26 AND ADAPTED FROM BAYES RULES<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>CITE DENNIS SUN<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>CITE PROBABILITYCOURSE.COM, say something about Cooper.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>cite probabilitycourse.com here<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>The main problem with variance is the units.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>modified from sample p, I think<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>modified from probabilitycourse.com again<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -800,13 +832,13 @@ Definition&nbsp;2.3: Independence
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./set-theory.html" class="pagination-link" aria-label="Set Theory">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Set Theory</span></span>
+      <a href="./counting.html" class="pagination-link" aria-label="Counting">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Counting</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./counting.html" class="pagination-link" aria-label="Counting">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Counting</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./summary.html" class="pagination-link" aria-label="Summary">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
