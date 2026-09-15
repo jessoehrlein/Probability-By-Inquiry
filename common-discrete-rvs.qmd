@@ -1,0 +1,98 @@
+# Common Discrete Random Variables
+
+## Introduction
+
+Now that we've looked at general properties and uses of discrete random variables, we'll investigate some types of discrete random variables that are often useful.
+
+## Definitions, Exercises, and Theorems
+
+We'll start with a result that we **will not prove** at this time. This is the other part of expectation being linear.
+
+::: {#thm-linear2}
+Given two random variables $X_1$ and $X_2$, $E[X_1 + X_2] = E[X_1] + E[X_2]$.
+:::
+
+Now we'll move into the types of random variables. The first two will be familiar from our discussion of counting.
+
+::: {#nte-bernoullirv .callout-note}
+## Bernoulli Random Variable
+
+A **Bernoulli random variable** with parameter $p$, written as $X \sim \mathrm{Bernoulli}(p)$, has successes (with $X=1$) and failures (With $X=0$) and a probability mass function given by $$P_X(k) = \begin{cases} 1-p & k=0 \\ p & k=1 \end{cases}.$$
+:::
+
+::: {#nte-binomialrv .callout-note}
+## Binomial Random Variable
+
+A **binomial random variable** with parameters $n$ and $p$, written as $X \sim \mathrm{Binomial}(n,p)$, is $n$ independent Bernoulli trials, with $P_X(k) = \binom{n}{k} p^k (1-p)^{n-k}$.
+:::
+
+You already proved this expression for the PMF of a binomial random variable in @thm-binom.
+
+::: {#exr-expvarbern}
+Find the expectation and variance of a Bernoulli random variable in terms of $p$.
+:::
+
+::: {#exr-freethrows}
+A basketball player who makes 90\% of free throw attempts has 8 attempts in a game. What is the probability of this player making exactly 7 of those free throws? 7 or more?
+:::
+
+::: {#exr-communication}
+A communication system consists of $n$ components, each of which will independently function with probability $p$. The total system will be able to operate if at least half of its components function. For what values of $p$ is a 5-component system more likely to operate than a 3-component system? (*Hint: write the inequality that would let you find this, and then feel free to use a computer to solve it.*)
+:::
+
+The next lemma will help us find the expectation of a binomial random variable.
+
+::: {#lem-binom}
+Prove that $i \binom{n}{i} = n \binom{n-1}{i-1}$. Try to prove this in two different ways: once using a proof based on an argument about counting, and once with an algebraic proof!
+:::
+
+::: {#thm-expbinom}
+Prove that the expectation of a binomial random variable is $np$. @lem-binom will be helpful. Near the end, bring a factor of $p$ out of the sum and look out for a new binomial random variable involving $n-1$. (Note: you can also do this using @thm-linear2. Prove this without the theorem first, then prove it with the theorem.)
+:::
+
+::: {#thm-varbinom}
+Prove that the variance of a binomial random variable is $np(1-p)$. (Hint: a similar process to the @thm-expbinom proof might help for finding $E[X^2]$.)
+:::
+
+Binomial random variables aren't the only family that we can build based on Bernoulli trials.
+
+::: {#nte-geometricrv .callout-note}
+## Geometric Random Variable
+
+A **geometric random variable** with parameter $p$, or $X \sim \mathrm{Geometric}(p)$, is the total number of independent Bernoulli trials to achieve the first success. It has probability mass function $P_X(k) = p(1-p)^{k-1}$.
+:::
+
+::: {#exr-geomft}
+Consider the basketball player from @exr-freethrows. What is the probability that it would take that player exactly 2 attempts to make their first free throw of the game? exactly 3 attempts?
+:::
+
+::: {#exr-geompmf}
+Use the sum of a geometric series to show that the geometric random variable's PMF does indeed sum to 1 over all possible values of $k$.
+:::
+
+::: {#thm-expgeom}
+For a geometric random variable $X$, prove that $E[X] = \frac{1}{p}$. (Hint: One way to approach this is to take a derivative with respect to $r$ of a geometric series. Another way is to split the sum into many similar sums that start at different values.)
+:::
+
+::: {#thm-vargeom}
+For a geometric random variable $X$, prove that $\mathrm{Var}(x) = \frac{1-p}{p^2}$. (Hint: one approach is to use that $E[X^2] = E[X(X-1)] + E[X]$ and use the second derivative of a geometric series.)
+:::
+
+::: {#exp-geomft2}
+Go back once more to the basketball player from @exr-freethrows. How many attempts $X$ would we expect them to need to make their first free throw of the game? What is the variance of $X$?
+:::
+
+We're not always interested in just the first success. We can expand this idea a bit more.
+
+::: {#nte-negbinomrv .callout-note}
+## Negative Binomial Random Variable
+
+A **negative binomial random variable** or **Pascal random variable**, $X \sim \mathrm{NB}(m,p)$, is the number of independent Bernoulli trials with probability of success $p$ until there have been $m$ successes.
+:::
+
+
+
+## Further Practice
+
+
+## Challenge Questions

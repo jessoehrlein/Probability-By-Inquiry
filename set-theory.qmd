@@ -2,7 +2,8 @@
 
 ## Introduction
 
-In INTRODUCTION, I said that we'd define probability as a function that follows some rules. But functions need some kind of input and output, so we need to start there. We'll say that a function maps from a **set** $X$ to a set $Y$. This chapter is all about what we mean by a **set** and how these sets behave.
+<!--In [What Is This Book?](intro),-->
+We'll define probability as a function that follows some rules. But functions need some kind of input and output, so we need to start there. We'll say that a function maps from a **set** $X$ to a set $Y$. This chapter is all about what we mean by a **set** and how these sets behave.
 
 ## Definitions, Exercises, and Theorems
 
@@ -28,6 +29,10 @@ For example, $\{2,4\}$ is a subset of $\{1,2,3,4,5\}$, but $\{4,6\}$ is not. The
 Let $A = \{n \mid n = 4k+1, k \in \mathbb{Z}\}$ and let $B = \{2, 5, 8, 11, 14, 17, 20\}$. Choose and write a non-empty subset of $A$ in roster notation, and choose and write a non-empty subset of $B$ in set-builder notation.
 :::
 
+::: {#exr-subset}
+Show that $A \subseteq C$ where $A = \{n \mid n = 4k+1, k \in \mathbb{Z}\}$ and $C = \{m \mid m = 4l - 3, l \in \mathbb{Z}\}$.
+:::
+
 ::: {#nte-equality .callout-note}
 ## Set Equality
 
@@ -35,15 +40,15 @@ We say that two sets $A$ and $B$ are **equal**, or $A = B$, if they have exactly
 :::
 
 ::: {#exr-equality}
-Use the definition of set equality to show that $A = C$ where $A = \{n \mid n = 4k+1, k \in \mathbb{Z}\}$ and $B = \{m \mid m = 4l - 3, l \in \mathbb{Z}\}$. (There are other ways to show this, but this exercise is about practicing using the definition!)
+Use the definition of set equality to show that $A = C$ where $A = \{n \mid n = 4k+1, k \in \mathbb{Z}\}$ and $C = \{m \mid m = 4l - 3, l \in \mathbb{Z}\}$. (This should partially use work you've already done. There are other ways to show this, but this exercise is about practicing using the definition!)
 :::
 
 ::: {#nte-cupcap .callout-note}
 ## Union and Intersection
 
-Given sets $A$ and $B$, their union $A \cup B$ is the set of all elements that are in at least one of $A$ or $B$. Given $n$ sets $A_1, A_2, \cdots, A_n$, their union $\bigcup_{i=1}^n A_i = A_1 \cup A_2 \cup \cdots \cup A_n$ is the set of all elements that are in at least one of the original $n$ sets.
+Given sets $A$ and $B$, their **union** $A \cup B$ is the set of all elements that are in at least one of $A$ or $B$. Given $n$ sets $A_1, A_2, \cdots, A_n$, their union $\bigcup_{i=1}^n A_i = A_1 \cup A_2 \cup \cdots \cup A_n$ is the set of all elements that are in at least one of the original $n$ sets.
 
-The intersection of $A$ and $B$, denoted $A \cap B$, is the set of all elements that are in both $A$ and $B$. The intersection of $n$ sets $\bigcap_{i=1}^n A_i = A_1 \cap A_2 \cap \cdots \cap A_n$ is the set of all elements that are in every one of the original $n$ sets.
+The **intersection** of $A$ and $B$, denoted $A \cap B$, is the set of all elements that are in both $A$ and $B$. The intersection of $n$ sets $\bigcap_{i=1}^n A_i = A_1 \cap A_2 \cap \cdots \cap A_n$ is the set of all elements that are in every one of the original $n$ sets.
 :::
 
 For example, $\{1,2,3,4,5\} \cup \{4,6\} = \{1,2,3,4,5,6\}$, and $\{1,2,3,4,5\} \cap \{4,6\} = \{4\}$.
@@ -154,25 +159,12 @@ How would you generalize the previous theorem to give the cardinality of the uni
 :::
 
 ::: {#exr-olypie}
-Suppose that a survey of Summer Olympics viewers in the US showed the following:
-
-- 50% watched gymnastics;
-
-- 80% watched track;
-
-- 10% watched diving;
-
-- 9% watched diving and gymnastics;
-
-- 7% watched diving and track;
-
-- 40% watched gymnastics and track;
-
-- 6% watched all three.
+Suppose that a survey of Summer Olympics viewers in the US showed the following: 50% watched gymnastics, 80% watched track, 10% watched diving, 9% watched diving and gymnastics, 7% watched diving and track, 40% watched gymnastics and track, and 6% watched all three.
 
 Find the percentage of the group that watched none of these three sports.
 :::
 
+<!--
 ## Further Practice
 
 To come!
@@ -180,3 +172,4 @@ To come!
 ## Challenge Questions
 
 To come!
+-->

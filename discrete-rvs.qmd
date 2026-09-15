@@ -2,7 +2,7 @@
 
 ## Introduction
 
-WORDS
+So far, we've looked at how the probability function works in general and have thought about counting equally likely outcomes. Here, we'll add some mathematical language and machinery for working with outcomes and their probabilities. We'll also look at some other ideas related to probability that we might be interested in, like measures of a typical outcome and how much outcomes vary.
 
 ## Definitions, Exercises, and Theorems
 
@@ -32,7 +32,6 @@ f.  The number of numbers 7 or above when four numbers from 0-9 are selected ran
 g.  The number of numbers 7 or above when four numbers from 0-9 are selected randomly, with repeats not allowed
 
 h.  The time until the next occurrence of rain in a particular city
-
 :::
 
 ::: {#exr-3heads}
@@ -66,7 +65,7 @@ Find the probability mass function for the random variable you defined in @exr-r
 :::
 
 ::: {#exr-roll6}
-I have a fair six-sided die which I roll until I roll a 6 for the first time. Let $X$ be the total number of die rolls. Find the probability mass function of $X$. 
+I have a fair six-sided die which I roll until I roll a 6 for the first time. Let $X$ be the total number of die rolls. Find the probability mass function of $X$.
 :::
 
 The PMF isn't the only useful way to talk about probabilities associated with a discrete random variable.
@@ -112,8 +111,10 @@ The class size paradox states that students tend to have a larger average class 
 :::
 
 ::: {#exr-chuckaluck}
-In the carnival game chuck-a-luck, three dice are rolled. You make a bet on a particular number (1, 2, 3, 4, 5, 6) showing up. The payout is 1 to 1 (that is, \$1 of net winnings for every \$1 you bet) if that number shows on (exactly) one die, 2 to 1 if it shows on two dice, and 3 to 1 if it shows up on all three. You lose your initial stake if your number does not show on any of the dice. If you make a \$1 bet on the number three, what is your expected net winnings?^[CITE DENNIS SUN]
+In the carnival game chuck-a-luck, three dice are rolled. You make a bet on a particular number (1, 2, 3, 4, 5, 6) showing up. The payout is 1 to 1 (that is, \$1 of net winnings for every \$1 you bet) if that number shows on (exactly) one die, 2 to 1 if it shows on two dice, and 3 to 1 if it shows up on all three. You lose your initial stake if your number does not show on any of the dice. If you make a \$1 bet on the number three, what is your expected net winnings?[^discrete-rvs-1]
 :::
+
+[^discrete-rvs-1]: CITE DENNIS SUN
 
 Some random variables are functions of other random variables. The next result is one of two results that tell us that expectation is \textbf{linear}, or in other words, expectation behaves nicely with linear combinations of random variables. (We'll need more tools to get to the second result.)
 
@@ -124,7 +125,6 @@ Prove that for any $a, b \in \mathbb{R}$, $E[aX+b] = aE[X] + b$.
 ::: {#exr-xsq}
 Consider a random variable $X$ with $P_X(x_k) = \frac{1}{7}$ for $x_k \in \{-3, -2, -1, 0, 1, 2, 3\}$. Let another random variable $Y = X^2$. Find the range of $Y$ and the probability mass function $P_Y$. Using $P_Y$, find $E[Y]$.
 :::
-
 
 ::: {#thm-lotus}
 ## Law of the Unconscious Statistician (LOTUS)
@@ -163,22 +163,38 @@ In terms of $\mathrm{SD}(X)$, what is $\mathrm{SD}(aX+b)$ where $a,b$ are real n
 :::
 
 ::: {#exr-marblescasino}
-A box contains five red and five blue marbles. Two marbles are withdrawn randomly. If they are the same color, you win \$1.10, and if they are different colors, you lose \$1.00. Find the expected value of the amount you win and the variance of the amount you win. (Please do not use this to start a casino on the quad.)^[CITE PROBABILITYCOURSE.COM, say something about Cooper.]
+A box contains five red and five blue marbles. Two marbles are withdrawn randomly. If they are the same color, you win \$1.10, and if they are different colors, you lose \$1.00. Find the expected value of the amount you win and the variance of the amount you win. (Please do not use this to start a casino on the quad.)[^discrete-rvs-2]
 :::
+
+[^discrete-rvs-2]: CITE PROBABILITYCOURSE.COM, say something about Cooper.
 
 ::: {exr-varsq}
 Find $\mathrm{Var}(X)$ and $\mathrm{Var}(Y)$ from @exr-xsq.
 :::
 
 ::: {exr-pi}
-Let $X$ be a discrete random variable with range $\{0, \frac{\pi}{4}, \frac{\pi}{2}, \frac{3\pi}{4}, \pi\}$ such that $P_X(x_i) = \frac{1}{5}$ for all $x_i$ in the range. Find $E[\cos(X)]$ and $\mathrm{Var}(\cos(X))$.^[cite probabilitycourse.com here]
+Let $X$ be a discrete random variable with range $\{0, \frac{\pi}{4}, \frac{\pi}{2}, \frac{3\pi}{4}, \pi\}$ such that $P_X(x_i) = \frac{1}{5}$ for all $x_i$ in the range. Find $E[\cos(X)]$ and $\mathrm{Var}(\cos(X))$.[^discrete-rvs-3]
 :::
+
+[^discrete-rvs-3]: cite probabilitycourse.com here
 
 ::: {exr-carmain}
-Suppose the annual cost of maintaining and repairing a car in Fitchburg has an expected value of \$500 and a variance of 280 square dollars^[The main problem with variance is the units.]. A tax of 25\% is introduced on all items associated with the maintenance and repair of cars, so everything is now 25\% more expensive. Now what are the expected value and variance of annual car maintenance and repair?^[modified from sample p, I think]
+Suppose the annual cost of maintaining and repairing a car in Fitchburg has an expected value of \$500 and a variance of 280 square dollars[^discrete-rvs-4]. A tax of 25% is introduced on all items associated with the maintenance and repair of cars, so everything is now 25% more expensive. Now what are the expected value and variance of annual car maintenance and repair?[^discrete-rvs-5]
 :::
 
+[^discrete-rvs-4]: The main problem with variance is the units.
+
+[^discrete-rvs-5]: modified from sample p, I think
+
 ## Further Practice
+
+::: {exr-tomatodo}
+Toma Todo is a game played by spinning a top called la pirinola and then following its instructions. The game starts with each player having a certain number of tokens (beans, chips, etc.) and a certain number of tokens in the central pot. The pirinola has six sides: Toma Todo (take all the chips from the pot), Toma 2 (take 2 chips from the pot), Toma 1 (take 1 chip from the pot), Pon 1 (put 1 chip in the pot), Pon 2 (put 2 chips in the pot), and Todos Ponen (all players put 2 chips in the pot).
+
+On a particular turn, what is the expected value of the number of chips a player will win? What is the variance?[^discrete-rvs-6] (*Note: you will need to introduce an assumption or some notation.*)
+:::
+
+[^discrete-rvs-6]: Problem from Larry Lesser's presentation at [eCOTS 2022](https://larrylesser.com/wp-content/uploads/2022/05/eCOTS-2022-activity-writeup-LESSER.pdf).
 
 ## Challenge Questions
 
@@ -187,5 +203,11 @@ Let $X$ be a random variable, and let $Y = e^X$. (In function form, this means t
 :::
 
 ::: {#exr-diegame}
-Consider the following game. You roll a fair die once and observe the result $X$. At this point, you can stop the game and win $X$ dollars. You can also choose to roll the die for the second time to observe the value $Y$. In this case, you will win $Y$ dollars. Let $W$ be the value that you win in this game. What strategy do you use to maximize $E[W]$? What is the maximum $E[W]$ you can achieve using your strategy? What is $\mathrm{Var}(W)$ using your strategy?^[modified from probabilitycourse.com again]
+Consider the following game. You roll a fair die once and observe the result $X$. At this point, you can stop the game and win $X$ dollars. You can also choose to roll the die for the second time to observe the value $Y$. In this case, you will win $Y$ dollars. Let $W$ be the value that you win in this game. What strategy do you use to maximize $E[W]$? What is the maximum $E[W]$ you can achieve using your strategy? What is $\mathrm{Var}(W)$ using your strategy?[^discrete-rvs-7]
+:::
+
+[^discrete-rvs-7]: modified from probabilitycourse.com again
+
+::: {#exr-twoenvelopes}
+You and a friend are given two identical envelopes. You know that one envelope contains twice as much money as the other. You are offered the opportunity to switch envelopes with your friend. What is the expected value of the money in the other envelope in terms of the money in your envelope? Based on this, should you switch? Something is a little strange about this scenario. Can you resolve the strangeness?
 :::
