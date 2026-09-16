@@ -199,8 +199,6 @@ window.Quarto = {
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
   <li><a href="#definitions-exercises-and-theorems" id="toc-definitions-exercises-and-theorems" class="nav-link" data-scroll-target="#definitions-exercises-and-theorems"><span class="header-section-number">1.2</span> Definitions, Exercises, and Theorems</a></li>
-  <li><a href="#further-practice" id="toc-further-practice" class="nav-link" data-scroll-target="#further-practice"><span class="header-section-number">1.3</span> Further Practice</a></li>
-  <li><a href="#challenge-questions" id="toc-challenge-questions" class="nav-link" data-scroll-target="#challenge-questions"><span class="header-section-number">1.4</span> Challenge Questions</a></li>
   </ul>
 </nav>
     </div>
@@ -228,7 +226,8 @@ window.Quarto = {
 
 <section id="introduction" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
-<p>In INTRODUCTION, I said that we’d define probability as a function that follows some rules. But functions need some kind of input and output, so we need to start there. We’ll say that a function maps from a <strong>set</strong> <span class="math inline">\(X\)</span> to a set <span class="math inline">\(Y\)</span>. This chapter is all about what we mean by a <strong>set</strong> and how these sets behave.</p>
+<!--In [What Is This Book?](intro),-->
+<p>We’ll define probability as a function that follows some rules. But functions need some kind of input and output, so we need to start there. We’ll say that a function maps from a <strong>set</strong> <span class="math inline">\(X\)</span> to a set <span class="math inline">\(Y\)</span>. This chapter is all about what we mean by a <strong>set</strong> and how these sets behave.</p>
 </section>
 <section id="definitions-exercises-and-theorems" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="definitions-exercises-and-theorems"><span class="header-section-number">1.2</span> Definitions, Exercises, and Theorems</h2>
@@ -266,6 +265,9 @@ Definition&nbsp;1.2: Element and Subset
 <div id="exr-writeset" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1.1</strong></span> Let <span class="math inline">\(A = \{n \mid n = 4k+1, k \in \mathbb{Z}\}\)</span> and let <span class="math inline">\(B = \{2, 5, 8, 11, 14, 17, 20\}\)</span>. Choose and write a non-empty subset of <span class="math inline">\(A\)</span> in roster notation, and choose and write a non-empty subset of <span class="math inline">\(B\)</span> in set-builder notation.</p>
 </div>
+<div id="exr-subset" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1.2</strong></span> Show that <span class="math inline">\(A \subseteq C\)</span> where <span class="math inline">\(A = \{n \mid n = 4k+1, k \in \mathbb{Z}\}\)</span> and <span class="math inline">\(C = \{m \mid m = 4l - 3, l \in \mathbb{Z}\}\)</span>.</p>
+</div>
 <div id="nte-equality" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -280,7 +282,7 @@ Definition&nbsp;1.3: Set Equality
 </div>
 </div>
 <div id="exr-equality" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1.2</strong></span> Use the definition of set equality to show that <span class="math inline">\(A = C\)</span> where <span class="math inline">\(A = \{n \mid n = 4k+1, k \in \mathbb{Z}\}\)</span> and <span class="math inline">\(B = \{m \mid m = 4l - 3, l \in \mathbb{Z}\}\)</span>. (There are other ways to show this, but this exercise is about practicing using the definition!)</p>
+<p><span class="theorem-title"><strong>Exercise 1.3</strong></span> Use the definition of set equality to show that <span class="math inline">\(A = C\)</span> where <span class="math inline">\(A = \{n \mid n = 4k+1, k \in \mathbb{Z}\}\)</span> and <span class="math inline">\(C = \{m \mid m = 4l - 3, l \in \mathbb{Z}\}\)</span>. (This should partially use work you’ve already done. There are other ways to show this, but this exercise is about practicing using the definition!)</p>
 </div>
 <div id="nte-cupcap" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -292,22 +294,22 @@ Definition&nbsp;1.4: Union and Intersection
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Given sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, their union <span class="math inline">\(A \cup B\)</span> is the set of all elements that are in at least one of <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span>. Given <span class="math inline">\(n\)</span> sets <span class="math inline">\(A_1, A_2, \cdots, A_n\)</span>, their union <span class="math inline">\(\bigcup_{i=1}^n A_i = A_1 \cup A_2 \cup \cdots \cup A_n\)</span> is the set of all elements that are in at least one of the original <span class="math inline">\(n\)</span> sets.</p>
-<p>The intersection of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, denoted <span class="math inline">\(A \cap B\)</span>, is the set of all elements that are in both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. The intersection of <span class="math inline">\(n\)</span> sets <span class="math inline">\(\bigcap_{i=1}^n A_i = A_1 \cap A_2 \cap \cdots \cap A_n\)</span> is the set of all elements that are in every one of the original <span class="math inline">\(n\)</span> sets.</p>
+<p>Given sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, their <strong>union</strong> <span class="math inline">\(A \cup B\)</span> is the set of all elements that are in at least one of <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span>. Given <span class="math inline">\(n\)</span> sets <span class="math inline">\(A_1, A_2, \cdots, A_n\)</span>, their union <span class="math inline">\(\bigcup_{i=1}^n A_i = A_1 \cup A_2 \cup \cdots \cup A_n\)</span> is the set of all elements that are in at least one of the original <span class="math inline">\(n\)</span> sets.</p>
+<p>The <strong>intersection</strong> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, denoted <span class="math inline">\(A \cap B\)</span>, is the set of all elements that are in both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. The intersection of <span class="math inline">\(n\)</span> sets <span class="math inline">\(\bigcap_{i=1}^n A_i = A_1 \cap A_2 \cap \cdots \cap A_n\)</span> is the set of all elements that are in every one of the original <span class="math inline">\(n\)</span> sets.</p>
 </div>
 </div>
 <p>For example, <span class="math inline">\(\{1,2,3,4,5\} \cup \{4,6\} = \{1,2,3,4,5,6\}\)</span>, and <span class="math inline">\(\{1,2,3,4,5\} \cap \{4,6\} = \{4\}\)</span>.</p>
 <div id="exr-cupcap" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1.3</strong></span> Find the intersection of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> from <a href="#exr-writeset" class="quarto-xref">Exercise&nbsp;<span>1.1</span></a>. Find the union of the subsets of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> that you described in <a href="#exr-writeset" class="quarto-xref">Exercise&nbsp;<span>1.1</span></a>.</p>
+<p><span class="theorem-title"><strong>Exercise 1.4</strong></span> Find the intersection of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> from <a href="#exr-writeset" class="quarto-xref">Exercise&nbsp;<span>1.1</span></a>. Find the union of the subsets of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> that you described in <a href="#exr-writeset" class="quarto-xref">Exercise&nbsp;<span>1.1</span></a>.</p>
 </div>
 <div id="exr-cupcap3" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1.4</strong></span> Define three sets <span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, and <span class="math inline">\(A_3\)</span> of your choosing, and find their union <span class="math inline">\(\bigcup_{i=1}^3 A_i\)</span> and their intersection <span class="math inline">\(\bigcap_{i=1}^3 A_i\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 1.5</strong></span> Define three sets <span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, and <span class="math inline">\(A_3\)</span> of your choosing, and find their union <span class="math inline">\(\bigcup_{i=1}^3 A_i\)</span> and their intersection <span class="math inline">\(\bigcap_{i=1}^3 A_i\)</span>.</p>
 </div>
 <div id="exr-distpt1" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1.5</strong></span> Show that <span class="math inline">\(A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 1.6</strong></span> Show that <span class="math inline">\(A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)\)</span>.</p>
 </div>
 <div id="thm-dist" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1.1 (Distributive Law)</strong></span> Prove the following visually, and then prove them using the definition of set equality (<a href="#nte-equality" class="quarto-xref">Definition&nbsp;<span>1.3</span></a>). (You’re already halfway there on the first statement with <a href="#exr-distpt1" class="quarto-xref">Exercise&nbsp;<span>1.5</span></a>!)</p>
+<p><span class="theorem-title"><strong>Theorem 1.1 (Distributive Law)</strong></span> Prove the following visually, and then prove them using the definition of set equality (<a href="#nte-equality" class="quarto-xref">Definition&nbsp;<span>1.3</span></a>). (You’re already halfway there on the first statement with <a href="#exr-distpt1" class="quarto-xref">Exercise&nbsp;<span>1.6</span></a>!)</p>
 <p>For any sets <span class="math inline">\(A, B,\)</span> and <span class="math inline">\(C\)</span>, we have that</p>
 <ul>
 <li><p><span class="math inline">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span>;</p></li>
@@ -330,7 +332,7 @@ Definition&nbsp;1.5
 </div>
 </div>
 <div id="exr-compdiff" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1.6</strong></span> Let <span class="math inline">\(S = \{0, 2, 4, 6, 8, 10\}\)</span>, <span class="math inline">\(A = \{0, 4, 8\}\)</span>, and <span class="math inline">\(B = \{0, 2, 8, 10\}\)</span>. Find <span class="math inline">\(A^C\)</span>, <span class="math inline">\(B^C\)</span>, <span class="math inline">\(A-B\)</span>, and <span class="math inline">\(B-A\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 1.7</strong></span> Let <span class="math inline">\(S = \{0, 2, 4, 6, 8, 10\}\)</span>, <span class="math inline">\(A = \{0, 4, 8\}\)</span>, and <span class="math inline">\(B = \{0, 2, 8, 10\}\)</span>. Find <span class="math inline">\(A^C\)</span>, <span class="math inline">\(B^C\)</span>, <span class="math inline">\(A-B\)</span>, and <span class="math inline">\(B-A\)</span>.</p>
 </div>
 <div id="thm-demorgan" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 1.2 (DeMorgan’s Laws)</strong></span> Prove the following for the case <span class="math inline">\(n=2\)</span> or <span class="math inline">\(n=3\)</span>. (If you’ve seen induction, try proving it for a general natural number <span class="math inline">\(n\)</span> using <a href="#nte-equality" class="quarto-xref">Definition&nbsp;<span>1.3</span></a>!) For any sets <span class="math inline">\(A_1, A_2, \cdots, A_n\)</span>, we have that</p>
@@ -354,10 +356,10 @@ Definition&nbsp;1.6: Disjoint and Partition
 </div>
 </div>
 <div id="exr-partition" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1.7</strong></span> Let <span class="math inline">\(S = \{1,2,3\}\)</span>. Write all possible partitions of <span class="math inline">\(S\)</span>, and explain how you know that these are all the possibilities.</p>
+<p><span class="theorem-title"><strong>Exercise 1.8</strong></span> Let <span class="math inline">\(S = \{1,2,3\}\)</span>. Write all possible partitions of <span class="math inline">\(S\)</span>, and explain how you know that these are all the possibilities.</p>
 </div>
 <div id="exr-cardpart" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1.8</strong></span> Let <span class="math inline">\(S\)</span> be the set of all cards in a standard 52-card deck. Let <span class="math inline">\(A\)</span> be the set containing the clubs and the red face cards. Describe a set <span class="math inline">\(B\)</span> such that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are disjoint. Do <span class="math inline">\(A\)</span> and your set <span class="math inline">\(B\)</span> form a partition of <span class="math inline">\(S\)</span>? Explain.</p>
+<p><span class="theorem-title"><strong>Exercise 1.9</strong></span> Let <span class="math inline">\(S\)</span> be the set of all cards in a standard 52-card deck. Let <span class="math inline">\(A\)</span> be the set containing the clubs and the red face cards. Describe a set <span class="math inline">\(B\)</span> such that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are disjoint. Do <span class="math inline">\(A\)</span> and your set <span class="math inline">\(B\)</span> form a partition of <span class="math inline">\(S\)</span>? Explain.</p>
 </div>
 <div id="nte-bijection" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -373,7 +375,7 @@ Definition&nbsp;1.7: Bijection
 </div>
 </div>
 <div id="exr-bij" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1.9</strong></span> Describe or illustrate a bijective function <span class="math inline">\(f: A \rightarrow B\)</span> where <span class="math inline">\(A = \{\textrm{red, blue, yellow}\}\)</span> and <span class="math inline">\(B = \{\textrm{shirt, skirt, headband}\}\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 1.10</strong></span> Describe or illustrate a bijective function <span class="math inline">\(f: A \rightarrow B\)</span> where <span class="math inline">\(A = \{\textrm{red, blue, yellow}\}\)</span> and <span class="math inline">\(B = \{\textrm{shirt, skirt, headband}\}\)</span>.</p>
 </div>
 <div id="nte-cardinality" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -389,7 +391,7 @@ Definition&nbsp;1.8: Cardinality
 </div>
 </div>
 <div id="exr-partcard" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1.10</strong></span> Suppose that <span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, and <span class="math inline">\(A_3\)</span> form a partition of a universal set <span class="math inline">\(S\)</span>. Let <span class="math inline">\(B\)</span> be some other set. If we know that <span class="math inline">\(|B \cap A_1| = n\)</span>, <span class="math inline">\(|B \cap A_2| = m\)</span>, and <span class="math inline">\(|B \cap A_3| = k\)</span>, what is <span class="math inline">\(|B|\)</span> and why?</p>
+<p><span class="theorem-title"><strong>Exercise 1.11</strong></span> Suppose that <span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, and <span class="math inline">\(A_3\)</span> form a partition of a universal set <span class="math inline">\(S\)</span>. Let <span class="math inline">\(B\)</span> be some other set. If we know that <span class="math inline">\(|B \cap A_1| = n\)</span>, <span class="math inline">\(|B \cap A_2| = m\)</span>, and <span class="math inline">\(|B \cap A_3| = k\)</span>, what is <span class="math inline">\(|B|\)</span> and why?</p>
 </div>
 <div id="nte-infinity" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -406,38 +408,30 @@ Definition&nbsp;1.9: Countable and Uncountable
 </div>
 </div>
 <div id="exr-interval" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1.11</strong></span> Find a bijection between the interval <span class="math inline">\((0,1)\)</span> and the interval <span class="math inline">\((3,5)\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 1.12</strong></span> Find a bijection between the interval <span class="math inline">\((0,1)\)</span> and the interval <span class="math inline">\((3,5)\)</span>.</p>
 </div>
 <div id="exr-uncountable" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1.12</strong></span> Using that <span class="math inline">\((0,1)\)</span> is uncountable, prove that any open interval <span class="math inline">\((a,b)\)</span> with <span class="math inline">\(a&lt;b\)</span> and <span class="math inline">\(a, b \in \mathbb{R}\)</span> is uncountable. (Hint: generalize your work from <a href="#exr-interval" class="quarto-xref">Exercise&nbsp;<span>1.11</span></a>.)</p>
+<p><span class="theorem-title"><strong>Exercise 1.13</strong></span> Using that <span class="math inline">\((0,1)\)</span> is uncountable, prove that any open interval <span class="math inline">\((a,b)\)</span> with <span class="math inline">\(a&lt;b\)</span> and <span class="math inline">\(a, b \in \mathbb{R}\)</span> is uncountable. (Hint: generalize your work from <a href="#exr-interval" class="quarto-xref">Exercise&nbsp;<span>1.12</span></a>.)</p>
 </div>
 <div id="thm-pie" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 1.3</strong></span> Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be finite sets. Prove that <span class="math inline">\(|A \cup B| = |A| + |B| - |A \cap B|\)</span>.</p>
 </div>
 <div id="exr-pie" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1.13</strong></span> How would you generalize the previous theorem to give the cardinality of the union of three finite sets <span class="math inline">\(|A \cup B \cup C|\)</span> instead of just two? What about <span class="math inline">\(n\)</span> finite sets?</p>
+<p><span class="theorem-title"><strong>Exercise 1.14</strong></span> How would you generalize the previous theorem to give the cardinality of the union of three finite sets <span class="math inline">\(|A \cup B \cup C|\)</span> instead of just two? What about <span class="math inline">\(n\)</span> finite sets?</p>
 </div>
 <div id="exr-olypie" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1.14</strong></span> Suppose that a survey of Summer Olympics viewers in the US showed the following:</p>
-<ul>
-<li><p>50% watched gymnastics;</p></li>
-<li><p>80% watched track;</p></li>
-<li><p>10% watched diving;</p></li>
-<li><p>9% watched diving and gymnastics;</p></li>
-<li><p>7% watched diving and track;</p></li>
-<li><p>40% watched gymnastics and track;</p></li>
-<li><p>6% watched all three.</p></li>
-</ul>
+<p><span class="theorem-title"><strong>Exercise 1.15</strong></span> Suppose that a survey of Summer Olympics viewers in the US showed the following: 50% watched gymnastics, 80% watched track, 10% watched diving, 9% watched diving and gymnastics, 7% watched diving and track, 40% watched gymnastics and track, and 6% watched all three.</p>
 <p>Find the percentage of the group that watched none of these three sports.</p>
 </div>
-</section>
-<section id="further-practice" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="further-practice"><span class="header-section-number">1.3</span> Further Practice</h2>
-<p>To come!</p>
-</section>
-<section id="challenge-questions" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="challenge-questions"><span class="header-section-number">1.4</span> Challenge Questions</h2>
-<p>To come!</p>
+<!--
+## Further Practice
+
+To come!
+
+## Challenge Questions
+
+To come!
+-->
 
 
 </section>

@@ -238,23 +238,26 @@ window.Quarto = {
 <div id="exr-srprob" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 3.2</strong></span> In the scenario in <a href="#exr-spinroll" class="quarto-xref">Exercise&nbsp;<span>3.1</span></a>, suppose the result I want is a red spin and a roll of either 3 or 4. What is the probability that I get my desired result?</p>
 </div>
+<div id="exr-flipseq" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.3</strong></span> How many distinct sequences of heads and tails can I get from flipping a coin three times?</p>
+</div>
 <div id="exr-pins" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.3</strong></span> Show that the number of four-digit PINs using digits 0 through 9 if digits can be reused is 10,000.</p>
+<p><span class="theorem-title"><strong>Exercise 3.4</strong></span> Show that the number of four-digit PINs using digits 0 through 9 if digits can be reused is 10,000.</p>
 </div>
 <div id="exr-pins2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.4</strong></span> How many four-digit PINs are there that do not use 2? What is the probability of choosing such a PIN from the set of all possible four-digit PINs?</p>
+<p><span class="theorem-title"><strong>Exercise 3.5</strong></span> How many four-digit PINs are there that do not use 2? What is the probability of choosing such a PIN from the set of all possible four-digit PINs?</p>
 </div>
 <div id="exr-password" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.5</strong></span> Suppose I have a set of <span class="math inline">\(n\)</span> characters and need a password of length <span class="math inline">\(k\)</span>. I am allowed to reuse characters. Find and explain an expression for the number of possible passwords.</p>
+<p><span class="theorem-title"><strong>Exercise 3.6</strong></span> Suppose I have a set of <span class="math inline">\(n\)</span> characters and need a password of length <span class="math inline">\(k\)</span>. I am allowed to reuse characters. Find and explain an expression for the number of possible passwords.</p>
 </div>
 <div id="exr-license" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.6</strong></span> Suppose a license plate format consists of 3 numbers (with repeats allowed) followed by 3 letters (again with repeats allowed). How many license plates are possible?</p>
+<p><span class="theorem-title"><strong>Exercise 3.7</strong></span> Suppose a license plate format consists of 3 numbers (with repeats allowed) followed by 3 letters (again with repeats allowed). How many license plates are possible?</p>
 </div>
 <div id="exr-licenserep" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.7</strong></span> Now suppose that repeats are <em>not</em> allowed in the license plates described above. Each digit and each letter can be used at most once. How many license plates are possible?</p>
+<p><span class="theorem-title"><strong>Exercise 3.8</strong></span> Now suppose that repeats are <em>not</em> allowed in the license plates described above. Each digit and each letter can be used at most once. How many license plates are possible?</p>
 </div>
 <div id="exr-prez" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.8</strong></span> All eight students in a class are going to give individual presentations during finals period. In how many possible orders could they present?</p>
+<p><span class="theorem-title"><strong>Exercise 3.9</strong></span> All eight students in a class are going to give individual presentations during finals period. In how many possible orders could they present?</p>
 </div>
 <div id="nte-factorial" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -270,7 +273,7 @@ Definition&nbsp;3.1: Factorial
 </div>
 </div>
 <div id="exr-prezperm" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.9</strong></span> On Thursday, only four of the students are going to give presentations, but they don’t know in advance which four. How many possible ordered sets of four student presenters are there?</p>
+<p><span class="theorem-title"><strong>Exercise 3.10</strong></span> On Thursday, only four of the students are going to give presentations, but they don’t know in advance which four. How many possible ordered sets of four student presenters are there?</p>
 </div>
 <div id="nte-permutation" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -278,11 +281,10 @@ Definition&nbsp;3.1: Factorial
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition&nbsp;3.2
+Definition&nbsp;3.2: Permutation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>##Permutation</p>
 <p>A <strong>permutation</strong> of <span class="math inline">\(n\)</span> objects is a way of ordering <span class="math inline">\(n\)</span> objects. A <span class="math inline">\(k\)</span>-permutation from a set of size <span class="math inline">\(n\)</span> is a way of ordering <span class="math inline">\(k\)</span> objects chosen from a set of <span class="math inline">\(n\)</span> objects. <span class="math inline">\(P(n,k)\)</span> denotes the number of <span class="math inline">\(k\)</span>-permutations from a set of size <span class="math inline">\(n\)</span>.</p>
 </div>
 </div>
@@ -290,16 +292,16 @@ Definition&nbsp;3.2
 <p><span class="theorem-title"><strong>Theorem 3.1</strong></span> Explain why the number of <span class="math inline">\(k\)</span>-permutations from a set of size <span class="math inline">\(n\)</span> is <span class="math inline">\(P(n,k) = \dfrac{n!}{(n-k)!}\)</span>.</p>
 </div>
 <div id="exr-bootstrap" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.10</strong></span> The “bootstrap” is a statistical method for generating a new data set that is like an existing one. Suppose we have a data set consisting of 6 observations: <span class="math inline">\(x_1,x_2,x_3,x_4,x_5,x_6.\)</span> To generate a bootstrap data set, we sample from the original data set with replacement, meaning that it is possible for each observation to be sampled more than once. An example bootstrap data set would be <span class="math inline">\(x_2, x_3, x_4, x_2, x_1, x_3\)</span>. What is the probability that the bootstrap data set contains each observation exactly once?</p>
+<p><span class="theorem-title"><strong>Exercise 3.11</strong></span> The “bootstrap” is a statistical method for generating a new data set that is like an existing one. Suppose we have a data set consisting of 6 observations: <span class="math inline">\(x_1,x_2,x_3,x_4,x_5,x_6.\)</span> To generate a bootstrap data set, we sample from the original data set with replacement, meaning that it is possible for each observation to be sampled more than once. An example bootstrap data set would be <span class="math inline">\(x_2, x_3, x_4, x_2, x_1, x_3\)</span>. What is the probability that the bootstrap data set contains each observation exactly once?</p>
 </div>
 <div id="exr-playlist" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.11</strong></span> As I work in the evenings, I often listen to music. Suppose that I have a playlist of <span class="math inline">\(n=50\)</span> songs and I listen to them on shuffle where the software always selects from the list with equal probability when selecting which song to play next. If I listen to <span class="math inline">\(k=10\)</span> songs, what is the probability that at least one of the songs will be duplicated? What about if I listen to <span class="math inline">\(k=30\)</span> songs? (Hint: think about the complement of the desired probability!)</p>
+<p><span class="theorem-title"><strong>Exercise 3.12</strong></span> As I work in the evenings, I often listen to music. Suppose that I have a playlist of <span class="math inline">\(n=50\)</span> songs and I listen to them on shuffle where the software always selects from the list with equal probability when selecting which song to play next. If I listen to <span class="math inline">\(k=10\)</span> songs, what is the probability that at least one of the songs will be duplicated? What about if I listen to <span class="math inline">\(k=30\)</span> songs? (Hint: think about the complement of the desired probability!)</p>
 </div>
 <div id="exr-birthday" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.12</strong></span> There are <span class="math inline">\(p\)</span> people in the room. Assume that each person’s birthday is equally likely to be any of 365 days (ignore leap years!) and that everyone’s birthdays are independent. What is the probability that no one in the room has the same birthday? What is the least value of <span class="math inline">\(p\)</span> for which there is at least a 50% chance that two people do share a birthday?</p>
+<p><span class="theorem-title"><strong>Exercise 3.13</strong></span> There are <span class="math inline">\(p\)</span> people in the room. Assume that each person’s birthday is equally likely to be any of 365 days (ignore leap years!) and that everyone’s birthdays are independent. What is the probability that no one in the room has the same birthday? What is the least value of <span class="math inline">\(p\)</span> for which there is at least a 50% chance that two people do share a birthday?</p>
 </div>
 <div id="exr-countsubs" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.13</strong></span> Let <span class="math inline">\(S = \{1,2,3,4,5\}\)</span>. Answer each of the following:</p>
+<p><span class="theorem-title"><strong>Exercise 3.14</strong></span> Let <span class="math inline">\(S = \{1,2,3,4,5\}\)</span>. Answer each of the following:</p>
 <ol type="a">
 <li><p>How many ordered pairs with elements from <span class="math inline">\(S\)</span> are there?</p></li>
 <li><p>How many ordered triples with elements from <span class="math inline">\(S\)</span> are there?</p></li>
@@ -317,22 +319,21 @@ Definition&nbsp;3.2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition&nbsp;3.3
+Definition&nbsp;3.3: Combination
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>##Combination</p>
 <p>The <strong>combination</strong> <span class="math inline">\(C(n,k)\)</span> or <span class="math inline">\(\binom{n}{k}\)</span>, usually read “<span class="math inline">\(n\)</span> choose <span class="math inline">\(k\)</span>,” is the number of ways to pick <span class="math inline">\(k\)</span> unordered things from a set of size <span class="math inline">\(n\)</span>.</p>
 </div>
 </div>
 <div id="exr-aces" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.14</strong></span> As part of a card game, I am dealt three cards from a standard 52-card deck. How many possible hands could I have? What is the probability that my hand does not contain an ace? (There are four aces in the deck.)</p>
+<p><span class="theorem-title"><strong>Exercise 3.15</strong></span> As part of a card game, I am dealt three cards from a standard 52-card deck. How many possible hands could I have? What is the probability that my hand does not contain an ace? (There are four aces in the deck.)</p>
 </div>
 <div id="exr-hhtt" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.15</strong></span> How many distinct sequences could I make using two copies of the letter <span class="math inline">\(H\)</span> and two copies of the letter <span class="math inline">\(T\)</span>?</p>
+<p><span class="theorem-title"><strong>Exercise 3.16</strong></span> How many distinct sequences could I make using two copies of the letter <span class="math inline">\(H\)</span> and two copies of the letter <span class="math inline">\(T\)</span>?</p>
 </div>
 <div id="exr-unfaircoin" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.16</strong></span> I flip an unfair coin with <span class="math inline">\(P(H) = p\)</span> four times. Find the probability that I flip exactly two tails. (Hint: What is the probability of the outcome <span class="math inline">\(TTHH\)</span>? What about <span class="math inline">\(HTHT\)</span>?)</p>
+<p><span class="theorem-title"><strong>Exercise 3.17</strong></span> I flip an unfair coin with <span class="math inline">\(P(H) = p\)</span> four times. Find the probability that I flip exactly two tails. (Hint: What is the probability of the outcome <span class="math inline">\(TTHH\)</span>? What about <span class="math inline">\(HTHT\)</span>?)</p>
 </div>
 <div id="nte-binomial" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -340,11 +341,10 @@ Definition&nbsp;3.3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition&nbsp;3.4
+Definition&nbsp;3.4: Bernoulli Trials and Binomial Experiments
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>##Bernoulli Trials and Binomial Experiments</p>
 <p>A <strong>Bernoulli trial</strong> is a random experiment with two possible outcomes: success with probability <span class="math inline">\(p\)</span> or failure with probability <span class="math inline">\(1-p\)</span>. A <strong>binomial experiment</strong> is a series of <span class="math inline">\(n\)</span> independent Bernoulli trials in which we count the number of successes.</p>
 </div>
 </div>
@@ -352,13 +352,13 @@ Definition&nbsp;3.4
 <p><span class="theorem-title"><strong>Theorem 3.3</strong></span> Explain why the probability of <span class="math inline">\(k\)</span> successes in a binomial experiment is <span class="math display">\[P(k) = \binom{n}{k} p^k (1-p)^{n-k}.\]</span></p>
 </div>
 <div id="exr-parkinsons" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.17</strong></span> A woman, Joy, claimed that she could smell Parkinson’s disease. Researchers gave her 12 shirts and asked her to identify which ones had been worn by someone with Parkinson’s. Initially, researchers believe that she correctly identified 11 of the shirts. If she had been randomly guessing, what is the probability that she would have identified <strong>at least</strong> 11 of the shirts correctly? Based on this, do you believe her claim or not? (When you’re done with the problem, I’ll tell you what happened next!)</p>
+<p><span class="theorem-title"><strong>Exercise 3.18</strong></span> A woman, Joy, claimed that she could smell Parkinson’s disease. Researchers gave her 12 shirts and asked her to identify which ones had been worn by someone with Parkinson’s. Initially, researchers believe that she correctly identified 11 of the shirts. If she had been randomly guessing, what is the probability that she would have identified <strong>at least</strong> 11 of the shirts correctly? Based on this, do you believe her claim or not? (When you’re done with the problem, I’ll tell you what happened next!)</p>
 </div>
 <div id="exr-tennis" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.18</strong></span> A particular tennis player has a first serve percentage (which means his attempt at serving the ball lands in a valid place) across his career of 65%. In one set, 17 of his 18 first serves were valid. What is the probability of this player serving at least this well across 18 first serves?</p>
+<p><span class="theorem-title"><strong>Exercise 3.19</strong></span> A particular tennis player has a first serve percentage (which means his attempt at serving the ball lands in a valid place) across his career of 65%. In one set, 17 of his 18 first serves were valid. What is the probability of this player serving at least this well across 18 first serves?</p>
 </div>
 <div id="exr-coprez" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.19</strong></span> A club needs to choose two co-presidents. The names of all the current members are put into a hat, and the first two that are drawn will be co-presidents. The names are not replaced once they are drawn (one person cannot be two presidents). You want to know the probability that the presidents both have the same major. Is this binomial, and why/why not?</p>
+<p><span class="theorem-title"><strong>Exercise 3.20</strong></span> A club needs to choose two co-presidents. The names of all the current members are put into a hat, and the first two that are drawn will be co-presidents. The names are not replaced once they are drawn (one person cannot be two presidents). You want to know the probability that the presidents both have the same major. Is this binomial, and why/why not?</p>
 </div>
 </section>
 <section id="further-practice" class="level2" data-number="3.3">
@@ -368,10 +368,10 @@ Definition&nbsp;3.4
 <section id="challenge-questions" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="challenge-questions"><span class="header-section-number">3.4</span> Challenge Questions</h2>
 <div id="exr-setgame" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.20</strong></span> The game SET involves a deck of 81 cards. Each card has a picture of some number (one, two, or three) of shapes (oval, squiggle, or diamond), which is painted in one color (green, red, or purple), with some shading (solid, hatched, or empty). Each number-shape-color-shading combination appears in the deck exactly once. Three cards are called a set if for each attribute, either all three cards match or all three are different. (For example, for color, either all three cards need to be the same color, or they each need to be a different color.) How many different sets are in the deck? What is the probability of there being a set in the first 4 cards dealt from a well-shuffled deck?</p>
+<p><span class="theorem-title"><strong>Exercise 3.21</strong></span> The game SET involves a deck of 81 cards. Each card has a picture of some number (one, two, or three) of shapes (oval, squiggle, or diamond), which is painted in one color (green, red, or purple), with some shading (solid, hatched, or empty). Each number-shape-color-shading combination appears in the deck exactly once. Three cards are called a set if for each attribute, either all three cards match or all three are different. (For example, for color, either all three cards need to be the same color, or they each need to be a different color.) How many different sets are in the deck? What is the probability of there being a set in the first 4 cards dealt from a well-shuffled deck?</p>
 </div>
 <div id="exr-mail" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.21</strong></span> A mail carrier delivers mail to nineteen houses on the east side of Blossom Street. The carrier notes that no two adjacent houses ever get mail on the same day, but that there are never more than two houses in a row that get no mail on the same day. How many different patterns of mail delivery are possible?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><span class="theorem-title"><strong>Exercise 3.22</strong></span> A mail carrier delivers mail to nineteen houses on the east side of Blossom Street. The carrier notes that no two adjacent houses ever get mail on the same day, but that there are never more than two houses in a row that get no mail on the same day. How many different patterns of mail delivery are possible?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </div>
 
 

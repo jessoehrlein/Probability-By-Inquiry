@@ -228,7 +228,7 @@ window.Quarto = {
 
 <section id="introduction" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">4.1</span> Introduction</h2>
-<p>WORDS</p>
+<p>So far, we’ve looked at how the probability function works in general and have thought about counting equally likely outcomes. Here, we’ll add some mathematical language and machinery for working with outcomes and their probabilities. We’ll also look at some other ideas related to probability that we might be interested in, like measures of a typical outcome and how much outcomes vary.</p>
 </section>
 <section id="definitions-exercises-and-theorems" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="definitions-exercises-and-theorems"><span class="header-section-number">4.2</span> Definitions, Exercises, and Theorems</h2>
@@ -405,6 +405,10 @@ Definition&nbsp;4.6: Variance and Standard Deviation
 </section>
 <section id="further-practice" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="further-practice"><span class="header-section-number">4.3</span> Further Practice</h2>
+<div class="{exr-tomatodo}">
+<p>Toma Todo is a game played by spinning a top called la pirinola and then following its instructions. The game starts with each player having a certain number of tokens (beans, chips, etc.) and a certain number of tokens in the central pot. The pirinola has six sides: Toma Todo (take all the chips from the pot), Toma 2 (take 2 chips from the pot), Toma 1 (take 1 chip from the pot), Pon 1 (put 1 chip in the pot), Pon 2 (put 2 chips in the pot), and Todos Ponen (all players put 2 chips in the pot).</p>
+<p>On a particular turn, what is the expected value of the number of chips a player will win? What is the variance?<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> (<em>Note: you will need to introduce an assumption or some notation.</em>)</p>
+</div>
 </section>
 <section id="challenge-questions" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="challenge-questions"><span class="header-section-number">4.4</span> Challenge Questions</h2>
@@ -412,7 +416,10 @@ Definition&nbsp;4.6: Variance and Standard Deviation
 <p><span class="theorem-title"><strong>Exercise 4.18</strong></span> Let <span class="math inline">\(X\)</span> be a random variable, and let <span class="math inline">\(Y = e^X\)</span>. (In function form, this means that <span class="math inline">\(Y(x) = e^{X(x)}.\)</span>) Find the cumulative distribution function <span class="math inline">\(F_Y\)</span> in terms of <span class="math inline">\(F_X\)</span>. (In other words, if <span class="math inline">\(F_Y (y) = F_X (x)\)</span>, how are <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span> related?)</p>
 </div>
 <div id="exr-diegame" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4.19</strong></span> Consider the following game. You roll a fair die once and observe the result <span class="math inline">\(X\)</span>. At this point, you can stop the game and win <span class="math inline">\(X\)</span> dollars. You can also choose to roll the die for the second time to observe the value <span class="math inline">\(Y\)</span>. In this case, you will win <span class="math inline">\(Y\)</span> dollars. Let <span class="math inline">\(W\)</span> be the value that you win in this game. What strategy do you use to maximize <span class="math inline">\(E[W]\)</span>? What is the maximum <span class="math inline">\(E[W]\)</span> you can achieve using your strategy? What is <span class="math inline">\(\mathrm{Var}(W)\)</span> using your strategy?<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p><span class="theorem-title"><strong>Exercise 4.19</strong></span> Consider the following game. You roll a fair die once and observe the result <span class="math inline">\(X\)</span>. At this point, you can stop the game and win <span class="math inline">\(X\)</span> dollars. You can also choose to roll the die for the second time to observe the value <span class="math inline">\(Y\)</span>. In this case, you will win <span class="math inline">\(Y\)</span> dollars. Let <span class="math inline">\(W\)</span> be the value that you win in this game. What strategy do you use to maximize <span class="math inline">\(E[W]\)</span>? What is the maximum <span class="math inline">\(E[W]\)</span> you can achieve using your strategy? What is <span class="math inline">\(\mathrm{Var}(W)\)</span> using your strategy?<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+</div>
+<div id="exr-twoenvelopes" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4.20</strong></span> You and a friend are given two identical envelopes. You know that one envelope contains twice as much money as the other. You are offered the opportunity to switch envelopes with your friend. What is the expected value of the money in the other envelope in terms of the money in your envelope? Based on this, should you switch? Something is a little strange about this scenario. Can you resolve the strangeness?</p>
 </div>
 
 
@@ -425,7 +432,8 @@ Definition&nbsp;4.6: Variance and Standard Deviation
 <li id="fn3"><p>cite probabilitycourse.com here<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>The main problem with variance is the units.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>modified from sample p, I think<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>modified from probabilitycourse.com again<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Problem from Larry Lesser’s presentation at <a href="https://larrylesser.com/wp-content/uploads/2022/05/eCOTS-2022-activity-writeup-LESSER.pdf">eCOTS 2022</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>modified from probabilitycourse.com again<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
