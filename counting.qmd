@@ -132,9 +132,11 @@ A particular tennis player has a first serve percentage (which means his attempt
 A club needs to choose two co-presidents. The names of all the current members are put into a hat, and the first two that are drawn will be co-presidents. The names are not replaced once they are drawn (one person cannot be two presidents). You want to know the probability that the presidents both have the same major. Is this binomial, and why/why not?
 :::
 
+<!--
 ## Further Practice
 
 To come!
+-->
 
 ## Challenge Questions
 
@@ -146,4 +148,4 @@ The game SET involves a deck of 81 cards. Each card has a picture of some number
 A mail carrier delivers mail to nineteen houses on the east side of Blossom Street. The carrier notes that no two adjacent houses ever get mail on the same day, but that there are never more than two houses in a row that get no mail on the same day. How many different patterns of mail delivery are possible?[^counting-1]
 :::
 
-[^counting-1]: From AIME 2011 CITE
+[^counting-1]: From AIME 2011
