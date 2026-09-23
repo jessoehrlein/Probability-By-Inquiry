@@ -120,21 +120,11 @@
     ]
   },
   {
-    "objectID": "counting.html#further-practice",
-    "href": "counting.html#further-practice",
-    "title": "3  Counting",
-    "section": "3.3 Further Practice",
-    "text": "3.3 Further Practice\nTo come!",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Counting</span>"
-    ]
-  },
-  {
     "objectID": "counting.html#challenge-questions",
     "href": "counting.html#challenge-questions",
     "title": "3  Counting",
-    "section": "3.4 Challenge Questions",
-    "text": "3.4 Challenge Questions\n\nExercise 3.21 The game SET involves a deck of 81 cards. Each card has a picture of some number (one, two, or three) of shapes (oval, squiggle, or diamond), which is painted in one color (green, red, or purple), with some shading (solid, hatched, or empty). Each number-shape-color-shading combination appears in the deck exactly once. Three cards are called a set if for each attribute, either all three cards match or all three are different. (For example, for color, either all three cards need to be the same color, or they each need to be a different color.) How many different sets are in the deck? What is the probability of there being a set in the first 4 cards dealt from a well-shuffled deck?\n\n\nExercise 3.22 A mail carrier delivers mail to nineteen houses on the east side of Blossom Street. The carrier notes that no two adjacent houses ever get mail on the same day, but that there are never more than two houses in a row that get no mail on the same day. How many different patterns of mail delivery are possible?1",
+    "section": "3.3 Challenge Questions",
+    "text": "3.3 Challenge Questions\n\nExercise 3.21 The game SET involves a deck of 81 cards. Each card has a picture of some number (one, two, or three) of shapes (oval, squiggle, or diamond), which is painted in one color (green, red, or purple), with some shading (solid, hatched, or empty). Each number-shape-color-shading combination appears in the deck exactly once. Three cards are called a set if for each attribute, either all three cards match or all three are different. (For example, for color, either all three cards need to be the same color, or they each need to be a different color.) How many different sets are in the deck? What is the probability of there being a set in the first 4 cards dealt from a well-shuffled deck?\n\n\nExercise 3.22 A mail carrier delivers mail to nineteen houses on the east side of Blossom Street. The carrier notes that no two adjacent houses ever get mail on the same day, but that there are never more than two houses in a row that get no mail on the same day. How many different patterns of mail delivery are possible?1",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Counting</span>"
     ]
@@ -144,7 +134,7 @@
     "href": "counting.html#footnotes",
     "title": "3  Counting",
     "section": "",
-    "text": "From AIME 2011 CITE↩︎",
+    "text": "From AIME 2011↩︎",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Counting</span>"
     ]
