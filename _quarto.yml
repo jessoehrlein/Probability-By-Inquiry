@@ -12,6 +12,7 @@ book:
     - prob-laws.qmd
     - counting.qmd
     - discrete-rvs.qmd
+    - common-discrete-rvs.qmd
     - summary.qmd
     - references.qmd
 
