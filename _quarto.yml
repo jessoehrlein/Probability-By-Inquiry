@@ -14,6 +14,7 @@ book:
     - discrete-rvs.qmd
     - common-discrete-rvs.qmd
     - practice-discrete-rvs.qmd
+    - continuous-rvs.qmd
     - summary.qmd
     - references.qmd
 

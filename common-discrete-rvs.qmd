@@ -37,7 +37,7 @@ Find the expectation and variance of a Bernoulli random variable in terms of $p$
 :::
 
 ::: {#exr-freethrows}
-A basketball player who makes 90\% of free throw attempts has 8 attempts in a game. What is the probability of this player making exactly 7 of those free throws? 7 or more?
+A basketball player who makes 90% of free throw attempts has 8 attempts in a game. What is the probability of this player making exactly 7 of those free throws? 7 or more?
 :::
 
 ::: {#exr-communication}
@@ -46,21 +46,25 @@ A communication system consists of $n$ components, each of which will independen
 
 The next lemma will help us find the expectation of a binomial random variable.
 
+```{=html}
 <!--
 ::: {#lem-binom}
 Prove that $i \binom{n}{i} = n \binom{n-1}{i-1}$. Try to prove this in two different ways: once using a proof based on an argument about counting, and once with an algebraic proof!
 :::
 -->
+```
 
 ::: {#thm-expvarbinom}
 Prove that the expectation of a binomial random variable is $np$ and that the variance is $np(1-p)$. <!--@lem-binom will be helpful. Near the end, bring a factor of $p$ out of the sum and look out for a new binomial random variable involving $n-1$.--> (Hint: use @thm-linear2.)
 :::
 
+```{=html}
 <!--
 ::: {#thm-varbinom}
 Prove that the variance of a binomial random variable is $np(1-p)$. (Hint: a similar process to the @thm-expbinom proof might help for finding $E[X^2]$.)
 :::
 -->
+```
 
 Binomial random variables aren't the only family that we can build based on Bernoulli trials.
 
@@ -152,9 +156,11 @@ Suppose that the number of typos in one of these chapters has a Poisson distribu
 Prove that for $X \sim \mathrm{Poisson}(\lambda)$, the expectation $E[X] = \lambda$ and the variance $\mathrm{Var}[X] = \lambda$. (Note: look out for the Taylor series expansion of $e^\lambda$.)
 :::
 
+```{=html}
 <!--
 ## Further Practice
 
 
 ## Challenge Questions
 -->
+```

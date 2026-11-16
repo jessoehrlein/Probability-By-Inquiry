@@ -1,0 +1,221 @@
+# Continuous Random Variables
+
+## Introduction
+
+Now we turn to random variables with an uncountable range: continuous random variables. Instead of using sums in many of our calculations, we'll use integrals.
+
+## Definitions, Exercises, and Theorems
+
+::: {#nte-crv .callout-note}
+## Continuous Random Variable
+
+A **continuous random variable** $X$ is a random variable with an uncountable range and a continuous cumulative distribution function, or CDF, $F_X(x)$.
+
+It has a **probability density function**, or PDF, $f_X(x)$ given by the derivative of the CDF. That is, $f_X(x) = F'_X(x)$ at every $x$ where $F_X$ is differentiable.
+:::
+
+The probability density function describes something like probability per unit length. Unlike the probability mass function of a discrete random variable, it no longer tells us probability at individual values of $X$. Those probabilities are now all 0, in some sense.
+
+As an **example**: Consider a random variable $Y$ with cumulative distribution function $$F_Y(y) = \begin{cases} 0 & y \leq 0, \\ y^2 & 0 < y \leq 1, \\ 1 & y > 1. \end{cases}$$ The probability density function is then given by the derivative with respect to $y$: $$f_Y(y) = \begin{cases} 0 & y < 0 \mathrm{~or~} y>1, \\ 2y & 0 < y < 1. \end{cases}$$ Note that the PDF is (technically) not defined at $y=0, 1$; the CDF isn't differentiable there.
+
+::: {#exr-crabpdf}
+Random variable $X$ describes the width in millimeters of the carapace (shell) for a particular species of crab. Its cumulative distribution function is: $$F_X(x) = \begin{cases} 0 & x \leq 6.5, \\ -0.75 + 0.4\ln(x) & 6.5 < x \leq 79.5, \\ 1 & x > 79.5. \end{cases}$$ Find the probability density function for $X$.
+:::
+
+Here are some useful properties of a continuous random variable $X$: - Probability densities can't be negative. That is $f_X(x) \geq 0$ for all $x$.
+
+- The area under the probability density curve must be 1, so $\int_{-\infty}^{\infty} f_X(u) du = 1$.
+
+- To find the CDF from the PDF, we integrate: $F_X(x) = \int_{-\infty}^x f_X(u) du$.
+
+- We can integrate to find probabilities or use the CDF directly. In general, $P(a < X \leq b) = F_X(b) - F_X(a) = \int_a^b f_X(u) du.$
+
+::: {#exr-wc}
+The probability density function for a random variable $W$ is $f_W(w) = C(4w-2w^2)$ for $0<w<2$ and 0 elsewhere. Using the second property above, find the value of $C$. Then calculate $P(W>1)$.
+:::
+
+::: {#exr-expc}
+Let $X$ be a random variable with PDF $f_X(x) = c e^{-x/2}$ for $x>0$ and 0 otherwise. Find the value of $c$, and then find the CDF for $X$.
+:::
+
+::: {#exr-busarr}
+Buses arrive at a specific stop every twenty minutes starting at 6am. A particular passenger arrives at the stop at a time that is uniformly distributed between 6:30 and 7am. Find the probability that the passenger waits less than five minutes for a bus. (Hint: What is the PDF for the passenger's time of arrival? What arrival times give a wait of five minutes or less?)
+:::
+
+::: {#exr-proflate}
+Let $T$ be how late a professor lets out class in minutes. (If $T$ is negative, then class finishes early.) The PDF of $T$ is $$f_T(t) = \begin{cases} c(2+t) & -2 < t < 0, \\ c(2-t) & 0 \le t < 2, \\ 0 & \textrm{otherwise}. \end{cases}$$ Find the value of $c$, and then calculate the probability that class ends between 1 minute early and 30 seconds (0.5 minutes) late.
+:::
+
+::: {#nte-contex .callout-note}
+## Expectation of a Continuous Random Variable
+
+The **expectation** of a continuous random variable $X$ is \$E\[X\] = \int\_{-\infty}\^{\infty} u f_X(u) du. \$
+:::
+
+::: {#exr-expexample}
+Find the expectation and variance for $Y$ from the example at the beginning of this chapter.
+:::
+
+::: {#exr-expwc}
+Find the expected value and variance for the random variable from @exr-wc.
+:::
+
+::: {#nte-uniform .callout-note}
+## Uniform Random Variable
+
+A **uniform random variable** $X = \mathrm{Uniform}(a,b)$ has the following cumulative distribution function: $$F_X(x) = \begin{cases} 0 & x \leq a, \\ \dfrac{x-a}{b-a} & a < x \leq b, \\ 1 & x > b. \end{cases}$$
+:::
+
+::: {#exr-uniexam}
+Sketch the CDF for a uniform random variable $X \sim \mathrm{Uniform}(2,5)$, and then find its probability density function and sketch it. Why is this type of variable called uniform?
+:::
+
+::: {#exr-uniexamev}
+Find the expected value and variance for the uniform random variable from @exr-uniexam.
+:::
+
+::: {#exr-uniprop}
+Verify the property that the area under the probability density function curve is 1 for a general uniform variable, $f_X(x) = \frac{1}{b-a}$ for $a<x<b$ and 0 elsewhere.
+:::
+
+::: {#thm-uniev}
+Find the expected value and variance for a general uniform random variable.
+:::
+
+::: {#exr-spidersphere}
+A witch can create a solid sphere of spiders by exhaling in a single breath. If the volume of spiders she exhales in cubic inches is $\textrm{Uniform}(36\pi, 972\pi)$, what is the probability that the radius of the spider sphere is more than 7 inches?
+:::
+
+::: {#exr-floodins}
+Losses covered by a flood insurance policy are uniformly distributed on the interval $[0,2]$. The insurer pays the amount of the loss in excess of a deductible d. The probability that the insurer pays at least 1.20 on a random loss is 0.30. Calculate the probability that the insurer pays at least 1.44 on a random loss.
+:::
+
+::: {#thm-cvfunc}
+Let $X$ and $Y$ be continuous random variables with $Y = g(X)$, where $g(x)$ is a monotonic (always increasing or always decreasing) function with a well-defined inverse $g^{-1}(y)$. Show that the cumulative distribution function for $Y$ can be defined as $F_Y(y) = F_X(g^{-1}(y))$.
+:::
+
+::: {#exr-xcube}
+Let $X$ be a random variable with PDF $f_X(x)$, and let $Y = X^3$. Find the CDF of $Y$ in terms of $f_X(x)$.
+:::
+
+::: {#exr-xsq}
+Let $X$ be a random variable with PDF $f_X(x) = \frac{5}{32} x^4$ for $0<x<2$ and 0 elsewhere. Find the CDF and PDF of $Y = X^2$.
+:::
+
+::: {#thm-pdffunc}
+Now also assume that $g$ is differentiable, and use your result from @thm-cvfunc to show that the probability density function $f_Y(y) = \dfrac{f_X(x_1)}{|g'(x_1)|}$ where $g(x_1) = y$.
+:::
+
+::: {#exr-reciprocal}
+Let $X$ be a random variable with PDF $f_X(x) = 2x$ for $0<x<1$ and 0 otherwise, and let $Y = \frac{1}{X}$. Find $f_Y$.
+:::
+
+::: {#exr-spidersphererad}
+What is the PDF of the radius of the witch's spider sphere from @exr-spidersphere?
+:::
+
+::: {#nte-normal .callout-note}
+## Standard Normal Random Variable
+
+A **standard normal random variable** $Z$, also written as $Z \sim N(0,1)$, has the PDF $f_Z(z) = \frac{1}{\sqrt{2 \pi}} e^{-z^2/2}$ for all $z \in \mathbb{R}$.
+:::
+
+Together in class, after a crash course in double integrals, we'll show that this is indeed a PDF (i.e. integrates to 1).
+
+::: {#thm-normalexp}
+Show that the expected value of $Z \sim N(0,1)$ is 0. (Hint: graph the PDF.)
+:::
+
+::: {#thm-normalvar}
+Show that the variance of $Z \sim N(0,1)$ is 1. (Hint: integrate by parts and look for an integral that you know equals 1.)
+:::
+
+::: {#nte-normalcdf .callout-note}
+## Normal CDF
+
+The **cumulative distribution function** of $Z \sim N(0,1)$ is $$\Phi(z) = P(Z \leq z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z e^{-x^2/2} dx.$$ This integral has no closed form but can be computed numerically.
+:::
+
+::: {#exr-phi}
+Let $X = \sigma Z + \mu$ for two real numbers $\sigma > 0$ and $\mu$. Show that $F_X(x) = \Phi\left(\frac{x-\mu}{\sigma}\right)$.
+:::
+
+::: {#nte-gennormal .callout-note}
+## General Normal Distribution
+
+We use the result of @exr-phi to generalize the idea of normal distribution. We say that $X$ is a normal random variable with $X \sim N(\mu, \sigma^2)$ when $X = \sigma Z + \mu$.
+:::
+
+::: {#thm-gennormal}
+Use properties of expectation and variance to show that the expectation of $X \sim N(\mu, \sigma^2)$ is $\mu$ and that the variance of $X \sim N(\mu, \sigma^2)$ is $\sigma^2$.
+:::
+
+::: {#exr-normcalc}
+Let $X \sim N(-5,4)$. Write $P(X<-3)$ in terms of $\Phi(z)$. Then use a normal distribution calculator and find this probability.
+:::
+
+Note on the normal distribution calculator (and most others you'll find online): they're set up as $N(\mu, \sigma)$ instead of $N(\mu, \sigma^2)$.
+
+::: {#exr-breadmach}
+The working lifetime in years of a particular model of bread machine is normally distributed with mean 10 and variance 4. Calculate the 12th percentile of the working lifetime in years. (Note: the $k$th percentile is the value that is greater than or equal to $k$ percent of the distribution.)
+:::
+
+::: {#exr-rainfall}
+The annual rainfall in a certain region is normally distributed with an average of $\mu = 48$ inches of rain and a standard deviation of $\sigma = 5$ inches of rain. What is the probability that there are less than 53 inches of rain in a particular year? Sketch the distribution and area of interest.
+:::
+
+::: {#exr-compchip}
+The lifetimes of interactive computer chips produced by a certain semiconductor manufacturer are normally distributed with parameters $\mu = 5 \times 10^{6}$ hours and $\sigma = 3 \times 10^5$ hours. What is the probability that a particular chip has a lifetime of at least $4 \times 10^6$ hours?
+:::
+
+::: {#exr-normconvert}
+For the standard normal random variable $Z$, find the value $z$ such that $P(Z>z) = 0.2$. Now suppose $X$ is a normal random variable with $\mu = 5$, and you know that $P(X > 9) = 0.2$. What is the value of $\sigma$ for $X$?
+:::
+
+::: {#exr-lifeins}
+The annual profit of a life insurance company is normally distributed. The probability that the annual profit does not exceed 2000 is 0.7642. The probability that the annual profit does not exceed 3000 is 0.9066. Calculate the probability that the annual profit does not exceed 1000.
+:::
+
+One last continuous random variable we'll talk about: exponential random variables. These are typically used to look at time between events.
+
+::: {#nte-exponential .callout-note}
+## Exponential Random Variable
+
+A random variable $X$ with an **exponential distribution** with parameter $\lambda > 0$ has the PDF $f_X(x) = \lambda e^{-\lambda x}$ for $x>0$ and is 0 elsewhere.
+:::
+
+::: {#thm-exponential}
+Find the cumulative distribution function, expectation, and variance of an exponential random variable $X$ in terms of its parameter $\lambda$.
+:::
+
+::: {#exr-carmiles}
+Suppose that the number of miles a car can go before it needs maintenance is exponentially distributed with a mean of 12,000 miles. Suppose that I drive 3400 miles roundtrip to visit family. What is the probability that I will be able to complete the trip without needing car maintenance?
+:::
+
+::: {#exr-tulip}
+A cat, Tulip, is intently staring at a birdfeeder to watch the birds that visit. Birds come to the feeder according to a Poisson process at a rate of 6 birds per hour. Tulip will leave and go look out a different window if she doesn't see birds within 15 minutes. What is the probability that more than 15 minutes elapse before the first bird arrives?
+:::
+
+::: {#exr-accident}
+The time until the next car accident for a particular driver is exponentially distributed with a mean of 200 days. Calculate the probability that the driver has no accidents in the next 365 days, but then has at least one accident in the 365-day period that follows the initial 365-day period.
+:::
+
+::: {#exr-burglary}
+Losses due to burglary are exponentially distributed with mean 100. The probability that a loss is between 40 and 50 equals the probability that a loss is between 60 and $r$, with $r > 60$. Find $r$.
+:::
+
+::: {#exr-expmedian}
+Find the median (the 50th percentile) of an exponential random variable in terms of $\lambda$. Is this equal to, greater than, or less than the expected value?
+:::
+
+::: {#thm-expmemory}
+Prove that exponential random variables are memoryless: for an exponential random variable $X$ and $x, a \ge 0$, we have that $P(X > x + a | X > a) = P(X > x)$.
+:::
+
+::: {#exr-memoryexam}
+Let $X \sim \mathrm{Exponential}(2)$. Find $P(X \leq 3)$. Then find $P(X > 7 | X > 4)$.
+:::
+
+::: {#exr-renters}
+An insurance companies sells 40% of its renters policies to home renters and the remaining 60% to apartment renters. Among home renters, the time from policy purchase until policy cancellation has an exponential distribution with mean 4 years, and among apartment renters, it has an exponential distribution with mean 2 years. Calculate the probability that the policyholder is a home renter, given that a renter still has a policy one year after purchase.
+:::
